@@ -1,0 +1,36 @@
+# Core
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# Deep Learning
+torch==2.1.0
+torchvision==0.16.0
+timm==0.9.12
+
+# Computer Vision
+opencv-python==4.8.1.78
+Pillow==10.1.0
+albumentations==1.3.1
+
+# MLOps
+mlflow==2.8.1
+
+# Data Science
+numpy==1.26.2
+pandas==2.1.3
+scikit-learn==1.3.2
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Database
+SQLAlchemy==2.0.23
+pymysql==1.1.0
+
+# Auth
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Utils
+python-dotenv==1.0.0
+jupyter==1.0.0
+pytest==7.4.3
