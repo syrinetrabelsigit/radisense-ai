@@ -18,7 +18,7 @@ from typing import Tuple, List, Optional
 import glob
 import logging
 
-from preprocessing import ChestXrayPreprocessor
+from data.preprocessing import ChestXrayPreprocessor
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)

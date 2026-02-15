@@ -8,10 +8,14 @@ Ce module crée les DataLoaders PyTorch pour train/val/test.
 """
 
 import os
+import sys
 import torch
 from torch.utils.data import DataLoader
-from dataset import ChestXrayDataset
 import logging
+
+# Ajouter le chemin parent pour imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from data.dataset import ChestXrayDataset
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
