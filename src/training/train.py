@@ -3,6 +3,7 @@ Training Script pour RadiSense AI
 Author: Syrine Trabelsi
 
 Script pour entraîner les 5 modèles sur ChestX-ray14.
+AVEC EARLY STOPPING ET DONNÉES NETTOYÉES
 """
 
 import os
@@ -33,7 +34,7 @@ logger = logging.getLogger(__name__)
 
 
 class Trainer:
-    """Classe pour gérer l'entraînement."""
+    """Classe pour gérer l'entraînement avec Early Stopping."""
     
     def __init__(
         self,
@@ -43,7 +44,8 @@ class Trainer:
         device,
         learning_rate=0.001,
         num_epochs=10,
-        model_name="model"
+        model_name="model",
+        patience=5
     ):
         self.model = model.to(device)
         self.train_loader = train_loader
@@ -51,6 +53,7 @@ class Trainer:
         self.device = device
         self.num_epochs = num_epochs
         self.model_name = model_name
+        self.patience = patience
         
         # Loss et optimizer
         self.criterion = nn.BCEWithLogitsLoss()
@@ -59,11 +62,13 @@ class Trainer:
         # Meilleure validation
         self.best_val_auc = 0.0
         self.best_epoch = 0
+        self.patience_counter = 0
         
         logger.info(f"✅ Trainer initialisé")
         logger.info(f"  Device: {device}")
         logger.info(f"  Learning rate: {learning_rate}")
         logger.info(f"  Epochs: {num_epochs}")
+        logger.info(f"  Early Stopping Patience: {patience}")
     
     def train_epoch(self):
         """Entraîne une epoch."""
@@ -125,7 +130,7 @@ class Trainer:
         return val_loss, auc_roc
     
     def train(self, mlflow_tracker=None):
-        """Boucle d'entraînement complète."""
+        """Boucle d'entraînement complète avec Early Stopping."""
         logger.info("="*60)
         logger.info(f"🚀 DÉBUT ENTRAÎNEMENT - {self.model_name}")
         logger.info("="*60)
@@ -151,12 +156,21 @@ class Trainer:
                 }
                 mlflow_tracker.log_metrics(metrics, step=epoch)
             
-            # Sauvegarder le meilleur modèle
+            # Early Stopping
             if val_auc > self.best_val_auc:
                 self.best_val_auc = val_auc
                 self.best_epoch = epoch
+                self.patience_counter = 0
                 self.save_model(f"models/{self.model_name}_best.pth")
                 logger.info(f"  ✅ Meilleur modèle sauvegardé (AUC: {val_auc:.4f})")
+            else:
+                self.patience_counter += 1
+                logger.info(f"  ⚠️  Pas d'amélioration ({self.patience_counter}/{self.patience})")
+                
+                if self.patience_counter >= self.patience:
+                    logger.info(f"  🛑 Early Stopping déclenché à l'epoch {epoch+1} !")
+                    logger.info(f"  📊 Meilleur modèle: Epoch {self.best_epoch+1} avec AUC {self.best_val_auc:.4f}")
+                    break
         
         logger.info(f"\n🏆 Meilleur résultat:")
         logger.info(f"  Epoch: {self.best_epoch+1}")
@@ -200,6 +214,8 @@ def main():
                        help='Learning rate')
     parser.add_argument('--num_workers', type=int, default=0,
                        help='Number of data loading workers')
+    parser.add_argument('--patience', type=int, default=5,
+                       help='Early stopping patience')
     
     args = parser.parse_args()
     
@@ -207,10 +223,10 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f"🖥️  Device: {device}")
     
-    # DataLoaders
-    logger.info(f"\n📂 Chargement des données...")
+    # DataLoaders avec DONNÉES NETTOYÉES
+    logger.info(f"\n📂 Chargement des données NETTOYÉES...")
     train_loader, val_loader, test_loader = get_dataloaders(
-        csv_path="data/raw/Data_Entry_2017.csv",
+        csv_path="data/cleaned/Data_Entry_2017_clean.csv",  # ← CHANGÉ ICI
         image_root="data/raw",
         splits_dir="data/splits",
         batch_size=args.batch_size,
@@ -224,14 +240,16 @@ def main():
     logger.info(f"  Paramètres: {model.num_parameters:,}")
     
     # MLflow
-    mlflow_tracker = MLflowTracker(experiment_name="RadiSense-AI-ChestXray14")
+    mlflow_tracker = MLflowTracker(experiment_name="RadiSense-AI-ChestXray14-CLEANED")
     
-    run_name = f"{args.model.upper()}_lr{args.lr}_bs{args.batch_size}_ep{args.epochs}"
+    run_name = f"{args.model.upper()}_CLEAN_lr{args.lr}_bs{args.batch_size}_ep{args.epochs}"
     tags = {
         'model': args.model,
         'batch_size': args.batch_size,
         'learning_rate': args.lr,
         'epochs': args.epochs,
+        'data': 'cleaned',  # ← TAG pour identifier données nettoyées
+        'patience': args.patience,
     }
     
     mlflow_tracker.start_run(run_name=run_name, tags=tags)
@@ -245,10 +263,12 @@ def main():
         'num_parameters': model.num_parameters,
         'optimizer': 'Adam',
         'loss': 'BCEWithLogitsLoss',
+        'early_stopping_patience': args.patience,
+        'data_cleaned': True,  # ← PARAM pour traçabilité
     }
     mlflow_tracker.log_params(params)
     
-    # Trainer
+    # Trainer avec Early Stopping
     trainer = Trainer(
         model=model,
         train_loader=train_loader,
@@ -256,7 +276,8 @@ def main():
         device=device,
         learning_rate=args.lr,
         num_epochs=args.epochs,
-        model_name=args.model
+        model_name=args.model,
+        patience=args.patience
     )
     
     # Train
