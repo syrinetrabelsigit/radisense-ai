@@ -1,0 +1,51 @@
+# FastAPI
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.23
+pymysql==1.1.0
+cryptography==41.0.7
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.1.1
+
+# ML & AI
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.1+cpu
+torchvision==0.16.1+cpu
+numpy==1.24.3
+pillow==10.1.0
+opencv-python-headless==4.8.1.78
+matplotlib==3.7.1
+
+# MLflow
+mlflow==2.9.2
+
+# Email
+aiosmtplib==3.0.1
+email-validator>=2.0.0
+
+# Utils
+python-dateutil==2.8.2
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# Paiement
+stripe>=7.0.0
+
+# Cloudinary
+cloudinary>=1.36.0
+
+# PDF generation
+reportlab>=4.0.0
+
+# ML Models
+timm>=0.9.0
+
+# Development
+pytest==7.4.3
+black==23.12.0

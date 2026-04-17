@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^5.2.2",
+    "@tanstack/react-query": "^5.90.21",
+    "apexcharts": "^5.6.0",
+    "autoprefixer": "^10.4.24",
+    "axios": "^1.13.5",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.34.2",
+    "lodash": "^4.17.23",
+    "lucide-react": "^0.574.0",
+    "postcss": "^8.5.6",
+    "react-apexcharts": "^2.0.1",
+    "react-compare-image": "^3.5.14",
+    "react-dropzone": "^15.0.0",
+    "react-hook-form": "^7.71.1",
+    "react-hot-toast": "^2.6.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-medium-image-zoom": "^5.4.0",
+    "react-router-dom": "^7.13.0",
+    "recharts": "^3.7.0",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
+  }
+}

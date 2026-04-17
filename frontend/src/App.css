@@ -1,0 +1,7 @@
+/* App.css - Nettoyé : suppression des styles qui écrasaient le layout */
+
+/* #root NE doit PAS avoir de max-width ni padding ni text-align
+   car ça casse la navbar et le layout global — tout est géré par .container dans index.css */
+#root {
+  min-height: 100vh;
+}

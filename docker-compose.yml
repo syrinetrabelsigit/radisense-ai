@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: radisense_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: radisense_password
+      MYSQL_DATABASE: radisense
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pradisense_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: radisense_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/app/.env
+    environment:
+      DATABASE_URL: mysql+pymysql://root:radisense_password@mysql:3306/radisense
+      MODELS_PATH: /app/models
+    volumes:
+      - ./models:/app/models        # Modèles ML montés en volume
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: radisense_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  mlflow:
+    image: python:3.10-slim
+    container_name: radisense_mlflow
+    restart: unless-stopped
+    command: >
+      sh -c "pip install mlflow==2.8.0 &&
+             mlflow ui --host 0.0.0.0 --port 5000
+             --backend-store-uri sqlite:///mlflow/mlflow.db
+             --default-artifact-root /mlflow/artifacts"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow
+
+volumes:
+  mysql_data:
+# version: '3.8'
+
+# services:
+#   database:
+#     image: mysql:8.0
+#     container_name: radisense_mysql
+#     restart: always
+#     environment:
+#       MYSQL_ROOT_PASSWORD: rootpassword
+#       MYSQL_DATABASE: radisense
+#       MYSQL_USER: radisense_user
+#       MYSQL_PASSWORD: radisense_pass
+#     ports:
+#       - "3307:3306"
+#     volumes:
+#       - mysql_data:/var/lib/mysql
+#     networks:
+#       - radisense_network
+
+#   mlflow:
+#     image: python:3.11-slim
+#     container_name: radisense_mlflow
+#     restart: always
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - ./mlruns:/mlflow/mlruns
+#     networks:
+#       - radisense_network
+#     command: sh -c "pip install mlflow && mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri file:///mlflow/mlruns"
+
+# volumes:
+#   mysql_data:
+
+# networks:
+#   radisense_network:
+#     driver: bridge

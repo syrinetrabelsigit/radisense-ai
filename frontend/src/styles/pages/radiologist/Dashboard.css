@@ -1,0 +1,110 @@
+/* ========== RADIOLOGIST DASHBOARD PREMIUM ========== */
+.db-page { min-height: calc(100vh - 80px); padding: 3rem 0 5rem; }
+
+/* LOADING */
+.db-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh; gap:1.5rem; }
+.db-spin-rings { position:relative; width:80px; height:80px; display:flex; align-items:center; justify-content:center; }
+.db-ring { position:absolute; border-radius:50%; border:2.5px solid transparent; animation:dbSpin linear infinite; }
+.db-ring.r1 { inset:0;    border-top-color:#0066CC; animation-duration:1.2s; }
+.db-ring.r2 { inset:12px; border-top-color:#00BFA6; animation-duration:1.8s; animation-direction:reverse; }
+.db-ring.r3 { inset:24px; border-top-color:rgba(0,102,204,0.4); animation-duration:2.4s; }
+@keyframes dbSpin { to { transform:rotate(360deg); } }
+.db-loading-label { font-size:0.9375rem; color:var(--text-muted); font-weight:600; }
+
+/* HEADER */
+.db-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:2.5rem; gap:2rem; }
+.db-badge { display:inline-flex; align-items:center; gap:0.625rem; padding:0.5rem 1rem; background:rgba(0,102,204,0.1); border:1px solid rgba(0,102,204,0.2); border-radius:100px; color:#60A5FA; font-size:0.8125rem; font-weight:600; margin-bottom:1rem; }
+[data-theme="light"] .db-badge { color:#0066CC; }
+.db-badge-dot { width:7px; height:7px; border-radius:50%; background:#10B981; animation:dbPulse 2s ease infinite; }
+@keyframes dbPulse { 0%,100%{ box-shadow:0 0 0 0 rgba(16,185,129,0.7); } 50%{ box-shadow:0 0 0 7px rgba(16,185,129,0); } }
+.db-title { font-size:2.75rem; font-weight:900; letter-spacing:-0.04em; color:var(--text-primary); margin-bottom:0.5rem; }
+.db-title-grad { background:linear-gradient(135deg,#0066CC,#00BFA6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.db-subtitle { font-size:1.0625rem; color:var(--text-secondary); }
+.db-new-btn { display:flex; align-items:center; gap:0.625rem; padding:0.875rem 1.75rem; border-radius:14px; background:linear-gradient(135deg,#0066CC,#00BFA6); border:none; color:white; font-weight:700; font-size:0.9375rem; cursor:pointer; box-shadow:0 8px 24px rgba(0,102,204,0.3); transition:all 0.25s ease; flex-shrink:0; }
+.db-new-btn:hover { transform:translateY(-2px); box-shadow:0 14px 36px rgba(0,102,204,0.45); }
+
+/* STATS */
+.db-stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-bottom:2rem; }
+.db-stat-card { position:relative; background:var(--bg-card); border:1px solid var(--border-primary); border-radius:22px; padding:1.75rem; display:flex; gap:1.25rem; align-items:flex-start; overflow:hidden; transition:all 0.3s ease; }
+.db-stat-card:hover { transform:translateY(-6px); border-color:var(--dsc); box-shadow:0 20px 48px rgba(0,0,0,0.1); }
+.db-stat-glow { position:absolute; bottom:-30px; right:-20px; width:100px; height:100px; border-radius:50%; opacity:0.07; filter:blur(20px); }
+.db-stat-icon { width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.db-stat-body { flex:1; }
+.db-stat-label { font-size:0.72rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.5rem; }
+.db-stat-val { font-size:2rem; font-weight:900; color:var(--text-primary); line-height:1; margin-bottom:0.5rem; }
+.db-stat-sub { display:flex; align-items:center; gap:0.375rem; font-size:0.78rem; font-weight:700; }
+.db-stat-sub.pos { color:#10B981; }
+.db-stat-sub.neutral { color:var(--text-muted); }
+
+/* SECTION */
+.db-section { margin-bottom:2rem; }
+.db-section-label { display:flex; align-items:center; gap:0.625rem; font-size:0.8125rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1.25rem; }
+.db-section-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.25rem; }
+.db-section-row .db-section-label { margin-bottom:0; }
+.db-view-all { display:flex; align-items:center; gap:0.375rem; padding:0.5rem 1.125rem; border-radius:10px; background:transparent; border:1px solid var(--border-primary); color:var(--text-secondary); font-weight:600; font-size:0.875rem; cursor:pointer; transition:all 0.2s ease; }
+.db-view-all:hover { border-color:#0066CC; color:#0066CC; }
+
+/* ACTIONS */
+.db-actions-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+.db-action-card { position:relative; background:var(--bg-card); border:1.5px solid var(--border-primary); border-radius:22px; padding:2rem 1.75rem; text-align:center; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:0.75rem; transition:all 0.3s ease; }
+.db-action-card:hover { transform:translateY(-8px); border-color:var(--dac); box-shadow:0 20px 48px rgba(0,0,0,0.1); }
+.db-action-icon { width:64px; height:64px; border-radius:18px; display:flex; align-items:center; justify-content:center; margin-bottom:0.25rem; transition:transform 0.3s ease; }
+.db-action-card:hover .db-action-icon { transform:scale(1.1); }
+.db-action-title { font-size:1.0625rem; font-weight:800; color:var(--text-primary); }
+.db-action-desc { font-size:0.875rem; color:var(--text-muted); line-height:1.5; }
+.db-action-arrow { margin-top:0.5rem; transition:transform 0.25s ease; }
+.db-action-card:hover .db-action-arrow { transform:translateX(4px); }
+
+/* TABLE */
+.db-table-card { background:var(--bg-card); border:1px solid var(--border-primary); border-radius:22px; overflow:hidden; }
+.db-table-wrap { overflow-x:auto; }
+.db-table { width:100%; border-collapse:collapse; min-width:750px; }
+.db-table thead { background:var(--bg-secondary); }
+.db-table th { padding:1rem 1.25rem; text-align:left; font-size:0.72rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; border-bottom:1px solid var(--border-primary); white-space:nowrap; }
+.db-row { border-bottom:1px solid var(--border-primary); transition:background 0.2s ease; }
+.db-row:hover { background:var(--bg-secondary); }
+.db-row:last-child { border-bottom:none; }
+.db-table td { padding:1rem 1.25rem; vertical-align:middle; }
+.db-patient-cell { display:flex; align-items:center; gap:0.75rem; }
+.db-patient-avatar { width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,#0066CC,#00BFA6); color:white; font-weight:800; font-size:0.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.db-patient-name { font-weight:700; color:var(--text-primary); font-size:0.9rem; }
+.db-date { font-size:0.875rem; color:var(--text-muted); }
+.db-path-pill { display:inline-flex; padding:0.3rem 0.75rem; border-radius:100px; font-size:0.75rem; font-weight:700; text-transform:capitalize; }
+.db-conf-wrap { display:flex; align-items:center; gap:0.75rem; }
+.db-conf-bar { width:80px; height:6px; background:var(--bg-secondary); border-radius:3px; overflow:hidden; }
+.db-conf-fill { height:100%; border-radius:3px; transition:width 0.6s ease; }
+.db-conf-val { font-size:0.875rem; font-weight:800; }
+.db-status-pill { display:inline-flex; align-items:center; gap:0.375rem; padding:0.3rem 0.75rem; border-radius:100px; font-size:0.75rem; font-weight:700; }
+.db-status-dot { width:6px; height:6px; border-radius:50%; animation:dbPulse 2s ease infinite; }
+.db-view-btn { display:flex; align-items:center; gap:0.375rem; padding:0.5rem 1rem; border-radius:9px; background:rgba(0,102,204,0.08); border:1px solid rgba(0,102,204,0.2); color:#0066CC; font-weight:700; font-size:0.8rem; cursor:pointer; transition:all 0.2s ease; white-space:nowrap; }
+.db-view-btn:hover { background:#0066CC; color:white; }
+
+/* CHARTS */
+.db-charts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+.db-chart-card { background:var(--bg-card); border:1px solid var(--border-primary); border-radius:22px; padding:1.75rem; }
+.db-chart-title { font-size:1rem; font-weight:800; color:var(--text-primary); margin-bottom:1.5rem; }
+
+/* BAR CHART */
+.db-bar-chart { display:flex; align-items:flex-end; gap:0.875rem; height:180px; }
+.db-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; gap:0.5rem; height:100%; }
+.db-bar-track { flex:1; width:100%; display:flex; align-items:flex-end; }
+.db-bar-fill { width:100%; border-radius:8px 8px 0 0; background:linear-gradient(180deg,#0066CC,#00BFA6); min-height:8px; position:relative; display:flex; align-items:flex-start; justify-content:center; transition:all 0.6s ease; }
+.db-bar-fill:hover { filter:brightness(1.2); }
+.db-bar-tip { position:absolute; top:-22px; font-size:0.72rem; font-weight:800; color:var(--text-muted); white-space:nowrap; }
+.db-bar-label { font-size:0.75rem; font-weight:700; color:var(--text-muted); }
+
+/* DONUT */
+.db-donut-wrap { display:flex; align-items:center; gap:2rem; justify-content:center; }
+.db-donut { width:140px; height:140px; border-radius:50%; background:conic-gradient(#EF4444 0deg 115deg, #F59E0B 115deg 201deg, #10B981 201deg 360deg); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.12); flex-shrink:0; }
+.db-donut-center { width:96px; height:96px; border-radius:50%; background:var(--bg-card); display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.db-donut-val { font-size:1.75rem; font-weight:900; color:var(--text-primary); line-height:1; }
+.db-donut-sub { font-size:0.65rem; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.05em; }
+.db-legend { display:flex; flex-direction:column; gap:0.875rem; }
+.db-legend-item { display:flex; align-items:center; gap:0.625rem; font-size:0.875rem; color:var(--text-secondary); }
+.db-legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.db-legend-pct { font-weight:800; margin-left:auto; }
+
+/* RESPONSIVE */
+@media (max-width:1200px) { .db-stats-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:1024px) { .db-charts-grid { grid-template-columns:1fr; } .db-actions-grid { grid-template-columns:1fr; } }
+@media (max-width:768px) { .db-header { flex-direction:column; align-items:flex-start; } .db-title { font-size:2rem; } .db-stats-grid { grid-template-columns:1fr; } }

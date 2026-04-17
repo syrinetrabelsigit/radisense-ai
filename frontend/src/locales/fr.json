@@ -1,0 +1,1881 @@
+{
+  "accountSettings": {
+  "badge": "Compte",
+  "title": "Paramètres du Compte",
+  "subtitle": "Gérez vos préférences et votre sécurité",
+  "sub": {
+    "title": "Abonnement",
+    "subtitle": "Votre plan actuel et votre utilisation",
+    "badgeBasic": "Basique",
+    "badgePro": "Professionnel",
+    "badgeEnterprise": "Entreprise",
+    "badgeResearchPro": "Recherche Pro",
+    "badgeResearchEnterprise": "Recherche Entreprise",
+    "billedMonthly": "Facturé mensuellement",
+    "billedYearly": "Facturé annuellement",
+    "upgrade": "Passer au plan supérieur",
+    "monthlyAnalyses": "Analyses ce mois",
+    "used": "utilisé",
+    "quotaReached": "Quota atteint",
+    "remaining": "restantes",
+    "unlimited": "Analyses illimitées incluses",
+    "datasetAccess": "Accès datasets",
+    "analysesMonth": "Analyses ce mois",
+    "analysesTotal": "Analyses effectuées",
+    "available": "Disponible",
+    "renewsOn": "Renouvellement le"
+  },
+  "notif": {
+    "title": "Notifications",
+    "subtitle": "Choisissez comment recevoir les alertes",
+    "email": "Notifications Email",
+    "emailDesc": "Recevoir les mises à jour par email",
+    "sms": "Notifications SMS",
+    "smsDesc": "Recevoir des alertes par SMS"
+  },
+  "security": {
+    "title": "Sécurité",
+    "subtitle": "Protégez votre compte",
+    "twoFactor": "Authentification à Deux Facteurs",
+    "twoFactorDesc": "Ajoutez une couche de sécurité supplémentaire",
+    "pw": {
+      "title": "Changer le Mot de Passe",
+      "current": "Mot de Passe Actuel",
+      "new": "Nouveau Mot de Passe",
+      "confirm": "Confirmer le Nouveau Mot de Passe",
+      "submit": "Mettre à Jour le Mot de Passe",
+      "success": "Mot de passe changé avec succès !",
+      "errorCurrent": "Le mot de passe actuel est requis",
+      "errorLength": "Le nouveau mot de passe doit contenir au moins 6 caractères",
+      "errorMatch": "Les mots de passe ne correspondent pas"
+    }
+  },
+  "danger": {
+    "title": "Zone de Danger",
+    "subtitle": "Actions irréversibles sur le compte",
+    "deleteTitle": "Supprimer le Compte",
+    "deleteDesc": "Une fois votre compte supprimé, toutes vos données seront définitivement effacées. Cette action est irréversible.",
+    "deleteBtn": "Supprimer Mon Compte"
+  }
+},
+"profile": {
+  "title": "Mon Profil",
+  "subtitle": "Gérez vos informations personnelles et professionnelles",
+  "badge": "Compte",
+  "editProfile": "Modifier le Profil",
+  "saveChanges": "Sauvegarder",
+  "cancel": "Annuler",
+  "saving": "Sauvegarde...",
+  "saveSuccess": "Profil sauvegardé avec succès.",
+  "photoSaved": "Photo sauvegardée avec succès !",
+  "photoUploaded": "Photo téléchargée ! Cliquez \"Sauvegarder\" pour confirmer.",
+  "uploading": "Téléchargement...",
+  "changePhoto": "Changer la Photo",
+  "uploadPhoto": "Télécharger une Photo",
+  "savePhoto": "Sauvegarder la Photo",
+  "photoRequired": "Une photo professionnelle est requise pour les radiologues.",
+  "photoHint": "JPG, PNG ou WebP · Max 5Mo",
+  "notProvided": "Non renseigné",
+  "sections": {
+    "personal": { "title": "Informations Personnelles", "subtitle": "Vos informations de base" },
+    "medical": { "title": "Détails Professionnels Médicaux", "subtitle": "Licence, spécialité et expérience" },
+    "cabinet": { "title": "Cabinet / Clinique", "subtitle": "Votre lieu d'exercice et contact" },
+    "research": { "title": "Détails de Recherche", "subtitle": "Informations institutionnelles et de recherche" }
+  },
+  "fields": {
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "city": "Ville",
+    "country": "Pays",
+    "bio": "Bio",
+    "specialty": "Spécialité",
+    "license": "Numéro de Licence",
+    "yearsExp": "Années d'Expérience",
+    "region": "Région / État",
+    "cabinetName": "Nom du Cabinet / Clinique",
+    "cabinetAddress": "Adresse Complète",
+    "cabinetPhone": "Téléphone Cabinet",
+    "institution": "Institution",
+    "orcid": "ORCID iD",
+    "yearsExpResearch": "Années d'Expérience"
+  }
+},
+  "chat": {
+      "title": "Messages",
+      "allCaughtUp": "Tout est lu",
+      "unread": "{{count}} non lu(s)",
+      "noMessages": "Aucun message",
+      "noContacts": "Aucun contact trouvé",
+      "startConversation": "Démarrer une conversation",
+      "messageRadiologist": "Écrivez à votre radiologue",
+      "messagePatient": "Écrivez à un patient",
+      "yourRadiologists": "Vos Radiologues",
+      "yourPatients": "Vos Patients",
+      "users": "Utilisateurs",
+      "to": "À :",
+      "change": "Changer",
+      "writePlaceholder": "Écrivez votre message...",
+      "send": "Envoyer",
+      "sending": "Envoi…",
+      "replyPlaceholder": "Répondre… (Entrée pour envoyer)",
+      "sayHello": "Aucun message — dites bonjour !"
+    },
+  "navbar": {
+    "doctor": "Docteur",
+    "radiologist": "RADIOLOGUE",
+    "patient": "PATIENT",
+    "researcher": "CHERCHEUR",
+    "admin": "ADMIN"
+  },
+  "nav": {
+    "requests": "Demandes",
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "partners": "Partenaires",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "dashboard": "Tableau de bord",
+    "logout": "Déconnexion",
+    "medicalRecords": "Dossier Médical",
+    "modelManagement": "Gestion Modèles",
+    "systemSettings": "Paramètres Système",
+    "myProfile": "Mon Profil",
+    "news": "Actualités",
+    "pathologies": "Pathologies",
+    "about": "À propos",
+    "upload": "Analyser",
+    "patients": "Patients",
+    "analytics": "Analytiques",
+    "myAnalyses": "Analyses",
+    "appointments": "Rendez-vous",
+    "radiologists": "Radiologues",
+    "education": "Éducation",
+    "datasets": "Datasets",
+    "experiments": "Expériences",
+    "models": "Modèles",
+    "visualization": "Visualisation",
+    "publications": "Publications",
+    "users": "Utilisateurs",
+    "monitoring": "Surveillance",
+    "database": "Base de données",
+    "logs": "Journaux",
+    "reports": "Rapports",
+    "accountSettings": "Paramètres",
+    "analyses": "Analyses"
+  },
+  "hero": {
+    "badge": "🏆 Plateforme d'imagerie médicale IA n°1",
+    "title": "Analyse de radiographie thoracique",
+    "titleGradient": "Alimentée par l'IA en quelques secondes",
+    "subtitle": "Détectez 14 pathologies thoraciques avec 84% de précision grâce à l'architecture DenseNet-121. Approuvé par plus de 500 radiologues dans le monde.",
+    "cta": {
+      "primary": "Essai gratuit",
+      "secondary": "Se connecter"
+    },
+    "stats": {
+      "analyses": "Analyses effectuées",
+      "accuracy": "Précision moyenne",
+      "time": "Temps de traitement"
+    }
+  },
+  "features": {
+    "title": "Pourquoi choisir RadiSense AI ?",
+    "subtitle": "La technologie de pointe rencontre l'excellence clinique",
+    "deeplearning": {
+      "title": "Apprentissage profond",
+      "desc": "DenseNet-121 entraîné sur plus de 112 000 radiographies thoraciques"
+    },
+    "instant": {
+      "title": "Résultats instantanés",
+      "desc": "Obtenez des prédictions en moins de 3 secondes avec visualisation Grad-CAM"
+    },
+    "hipaa": {
+      "title": "Conforme HIPAA",
+      "desc": "Chiffrement de niveau bancaire avec base de données MySQL sécurisée"
+    },
+    "analytics": {
+      "title": "Analyses avancées",
+      "desc": "Suivez les performances avec MLflow, visualisez les tendances"
+    },
+    "pathologies": {
+      "title": "14 pathologies",
+      "desc": "Détectez pneumonie, épanchement, cardiomégalie et 11 autres conditions"
+    },
+    "comparison": {
+      "title": "Comparaison de modèles",
+      "desc": "Comparez les prédictions de DenseNet, ResNet, EfficientNet, VGG et MobileNet"
+    }
+  },
+  "cta": {
+    "title": "Prêt à transformer votre flux de travail radiologique ?",
+    "subtitle": "Rejoignez plus de 500 radiologues utilisant l'IA pour améliorer la précision diagnostique",
+    "button": "Commencer maintenant"
+  },
+  "footer": {
+    "tagline": "Imagerie médicale alimentée par l'IA",
+    "description": "Révolutionner l'analyse de radiographie thoracique avec l'apprentissage profond.",
+    "product": "Produit",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "documentation": "Documentation",
+    "api": "API",
+    "company": "Entreprise",
+    "about": "À propos",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "blog": "Blog",
+    "legal": "Légal",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "security": "Sécurité",
+    "copyright": "© 2026 RadiSense AI. Tous droits réservés."
+  },
+  "login": {
+    "error": "Nom d'utilisateur ou mot de passe incorrect.",
+    "errorCredentials": "Nom d'utilisateur ou mot de passe incorrect.",
+    "errorEmailNotVerified": "Veuillez vérifier votre email avant de vous connecter. Consultez votre boîte mail.",
+    "errorInactive": "Votre compte a été suspendu. Veuillez contacter le support.",
+    "title": "Bon retour",
+    "subtitle": "Connectez-vous pour accéder à votre tableau de bord RadiSense AI et continuer à analyser des radiographies thoraciques avec une technologie d'IA de pointe.",
+    "feature1": {
+      "title": "Analyse instantanée",
+      "desc": "Obtenez des résultats en moins de 3 secondes"
+    },
+    "feature2": {
+      "title": "14 pathologies",
+      "desc": "Capacités de détection complètes"
+    },
+    "feature3": {
+      "title": "Sécurisé et conforme",
+      "desc": "Infrastructure conforme HIPAA"
+    },
+    "form": {
+      "title": "Se connecter",
+      "subtitle": "Entrez vos identifiants pour continuer",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "remember": "Se souvenir de moi",
+      "forgot": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "loading": "Connexion en cours...",
+      "or": "ou",
+      "create": "Créer un nouveau compte"
+    }
+  },
+  "register": {
+  "professionalAccess": "Accès Professionnel — RadiSense AI",
+  "requestTitle": "Demander un Accès Professionnel",
+  "requestSubtitle": "RadiSense AI est une plateforme professionnelle vérifiée. Toutes les candidatures sont examinées manuellement par notre équipe avant activation.",
+  "back": "Retour",
+  "optional": "optionnel",
+  "processing": "Traitement en cours...",
+  "plan": "Plan",
+  "planSelected": "Plan sélectionné",
+  "cancelAnytime": "Résiliable à tout moment",
+  "yearTotal": "total annuel",
+  "saveYear": "Économisez ${{amount}}/an vs mensuel",
+  "reviewPay": "Récapitulatif & Paiement",
+  "submitApplication": "Soumettre la Candidature",
+  "yr": "an",
+  "mo": "mois",
+  "moBilledYearly": "mois · facturé annuellement",
+  "stripeAfterForm": "Paiement Stripe après le formulaire",
+  "freeNoCreditCard": "Gratuit — aucune carte bancaire requise",
+  "stripeNote": "Stripe sécurisé · Vérification admin sous 48h",
+  "freeNote": "Sans carte bancaire · Examen admin sous 48h · Identifiants par email",
+  "orderSummary": "Récapitulatif de la Commande",
+  "orderReview": "Vérifiez votre candidature avant le paiement sécurisé",
+  "applicationDetails": "Détails de la Candidature",
+  "name": "Nom",
+  "email": "Email",
+  "paymentWarning": "Le paiement est débité immédiatement, mais l'accès au compte n'est accordé qu'après vérification de vos justificatifs par l'administrateur.",
+  "stripeSecured": "Sécurisé par Stripe",
+  "testCard": "Carte de test :",
+  "redirectingStripe": "Redirection vers Stripe...",
+  "payBtn": "Payer",
+  "alreadyAccount": "Vous avez déjà un compte ?",
+  "patientNote": {
+    "title": "Vous êtes un patient ?",
+    "desc": "Les comptes patients sont créés par votre radiologue ou un administrateur de clinique. Contactez votre prestataire de soins pour obtenir l'accès."
+  },
+  "profiles": {
+    "radiologist": {
+      "title": "Radiologue",
+      "subtitle": "Professionnel de l'imagerie médicale agréé",
+      "f1": "Analyse de radiographie thoracique par IA",
+      "f2": "Gestion et suivi de vos patients",
+      "f3": "Génération de rapports diagnostiques détaillés",
+      "f4": "Gratuit · Pro (79 $/mois) · Entreprise (199 $/mois)",
+      "badge": "Numéro de licence médicale requis · Vérifié par l'admin",
+      "note": "Votre licence sera vérifiée par notre équipe avant l'activation du compte."
+    },
+    "researcher": {
+      "title": "Chercheur",
+      "subtitle": "Chercheur médical académique ou industriel",
+      "f1": "Accès aux datasets de radiographies anonymisées",
+      "f2": "Outils de benchmarking et comparaison de modèles",
+      "f3": "Analytiques de recherche et export",
+      "f4": "Gratuit · Pro (49 $/mois) · Entreprise (99 $/mois)",
+      "badge": "Affiliation institutionnelle requise · Vérifié par l'admin",
+      "note": "Un email institutionnel et un ORCID iD sont vivement recommandés pour une approbation plus rapide."
+    }
+  },
+  "step2": {
+    "radiologistBadge": "Candidature Radiologue",
+    "researcherBadge": "Candidature Chercheur",
+    "radiologistTitle": "Détails Professionnels",
+    "researcherTitle": "Profil de Recherche",
+    "radiologistSubtitle": "Renseignez vos informations professionnelles avec précision. Notre équipe vérifiera votre licence médicale avant l'activation.",
+    "researcherSubtitle": "Indiquez votre affiliation institutionnelle et votre contexte de recherche. Examen sous 48 heures.",
+    "paymentNote": "Vous serez redirigé vers le paiement sécurisé après soumission du formulaire.",
+    "freeNote": "Plan gratuit — aucun paiement requis. Examen admin sous 48h."
+  },
+  "process": {
+    "step1": "Soumettre votre candidature professionnelle",
+    "step2": "L'admin vérifie vos justificatifs (48h)",
+    "step3": "Recevoir vos identifiants par email",
+    "step4": "Changer votre mot de passe à la première connexion"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire",
+    "professionalEmail": "Veuillez utiliser un email professionnel/institutionnel (pas Gmail, Yahoo, etc.)",
+    "institutionalEmail": "Veuillez utiliser votre adresse email institutionnelle"
+  },
+  "radio": {
+    "securityNote": "Tous les champs obligatoires sont marqués d'un astérisque. Utilisez vos vraies informations professionnelles — notre équipe les vérifiera avant l'activation.",
+    "fullName": "Nom Complet",
+    "professionalEmail": "Email Professionnel",
+    "emailHint": "Email d'hôpital ou d'institution uniquement. Les adresses personnelles (Gmail, Yahoo...) ne sont pas acceptées.",
+    "phone": "Téléphone Professionnel",
+    "specialty": "Spécialité en Radiologie",
+    "specialtyPlaceholder": "Sélectionnez votre spécialité...",
+    "licenseNumber": "Numéro de Licence Médicale",
+    "licenseHint": "Votre numéro de licence médicale officiel ou de certification. Sera vérifié.",
+    "experience": "Années d'Expérience",
+    "experiencePlaceholder": "Sélectionner...",
+    "hospital": "Hôpital / Clinique",
+    "hospitalPlaceholder": "ex. Hôpital La Rabta, Tunis",
+    "city": "Ville",
+    "cityPlaceholder": "Ville",
+    "country": "Pays",
+    "countryPlaceholder": "Sélectionner le pays...",
+    "additionalInfo": "Informations Complémentaires",
+    "messagePlaceholder": "Certifications, sous-spécialités, domaines de recherche..."
+  },
+  "research": {
+    "securityNote": "Les champs obligatoires sont marqués d'un astérisque. Un email institutionnel est requis pour une approbation plus rapide.",
+    "institutionalEmail": "Email Institutionnel",
+    "emailHint": "Email d'université ou d'institut de recherche uniquement. Les adresses personnelles ne sont pas acceptées.",
+    "phone": "Téléphone",
+    "institution": "Université / Institut de Recherche",
+    "institutionPlaceholder": "ex. Université de Tunis El Manar",
+    "department": "Département / Laboratoire",
+    "departmentPlaceholder": "ex. Département de Radiologie",
+    "position": "Poste / Titre",
+    "positionPlaceholder": "Doctorant, Post-doctorant, Maître de conférences...",
+    "domain": "Domaine de Recherche",
+    "domainPlaceholder": "Sélectionnez votre domaine...",
+    "country": "Pays",
+    "orcid": "ORCID iD",
+    "orcidRec": "recommandé",
+    "orcidHint": "Aide à vérifier votre identité de chercheur. Obtenez-en un gratuitement sur",
+    "publications": "Google Scholar / URL Publications",
+    "useCase": "Comment utiliserez-vous RadiSense AI ?",
+    "useCasePlaceholder": "Décrivez votre projet de recherche, les données dont vous avez besoin et comment RadiSense AI soutiendra vos travaux..."
+  },
+  "pro": {
+    "billedMonthly": "mois",
+    "billedYearly": "mois facturé annuellement",
+    "forever": "à vie"
+  },
+  "placeholder": {
+    "firstname": "Prénom",
+    "lastname": "Nom"
+  },
+  "error": {
+    "match": "Les mots de passe ne correspondent pas",
+    "length": "Le mot de passe doit contenir au moins 6 caractères"
+  },
+  "success": {
+    "title": "Candidature Soumise",
+    "desc": "Votre profil {{role}} a bien été reçu. Notre équipe examinera vos justificatifs et vous enverra vos identifiants dans les 48 heures.",
+    "medical": "médical",
+    "research": "de recherche",
+    "emailSent": "Email de confirmation envoyé à votre adresse",
+    "verify": "Votre {{type}} sera vérifié(e)",
+    "license": "licence médicale",
+    "affiliation": "affiliation institutionnelle",
+    "credentialsSent": "Identifiants de connexion envoyés après approbation",
+    "passwordChange": "Changement de mot de passe requis à la première connexion",
+    "backHome": "Retour à l'Accueil"
+  },
+  "orYearly": "ou {{price}} $/mois en annuel",
+  "yearlySavings": "La facturation annuelle vous fait économiser 20% par rapport au mensuel"
+},
+  "payment": {
+    "verifying": "Vérification de votre paiement…",
+    "verifyingDesc": "Veuillez patienter, nous confirmons votre abonnement avec Stripe.",
+    "successTitle": "Paiement Réussi !",
+    "successDesc": "Votre abonnement {{plan}} est maintenant actif. Un email de confirmation a été envoyé.",
+    "included": "Plan — Ce qui est inclus",
+    "emailSent": "Email de confirmation envoyé",
+    "emailSentDesc": "Vérifiez votre boîte de réception pour le reçu et l'email de bienvenue",
+    "goToDashboard": "Accéder au Tableau de Bord",
+    "viewPlans": "Voir les Plans",
+    "errorTitle": "Vérification Échouée",
+    "errorDesc": "Nous n'avons pas pu vérifier votre paiement. Contactez-nous à support@radisense.ai",
+    "backToPricing": "Retour aux Tarifs",
+    "tryAgain": "Réessayer"
+  },
+  "partners": {
+  "hero": {
+    "badge": "Réseau de Partenaires Vérifiés",
+    "title": "Nos Radiologues",
+    "titleGradient": "Partenaires",
+    "subtitle": "Découvrez les professionnels de l'imagerie médicale agréés qui font confiance à RadiSense AI pour améliorer leur workflow diagnostique."
+  },
+  "stats": {
+    "partners": "Radiologues Partenaires",
+    "countries": "Pays Couverts",
+    "analyses": "Analyses Effectuées",
+    "accuracy": "Précision Moyenne"
+  },
+  "searchPlaceholder": "Rechercher par nom, hôpital ou pays...",
+  "filterAll": "Toutes les Spécialités",
+  "showing": "Affichage de",
+  "of": "sur",
+  "radiologists": "radiologues",
+  "analyses": "Analyses",
+  "accuracy": "Précision",
+  "verified": "Partenaire Vérifié & Actif",
+  "memberSince": "Membre depuis",
+  "noResults": "Aucun radiologue trouvé",
+  "noResultsSub": "Essayez d'ajuster votre recherche ou vos filtres",
+  "resetFilters": "Réinitialiser les filtres",
+  "why": {
+    "title": "Pourquoi Rejoindre",
+    "titleGradient": "RadiSense AI ?",
+    "subtitle": "Rejoignez un réseau mondial de radiologues utilisant l'IA pour améliorer la précision diagnostique et les résultats patients",
+    "b1": {
+      "title": "Précision par l'IA",
+      "desc": "DenseNet-121 entraîné sur 112 000+ radiographies thoraciques détecte 14 pathologies avec jusqu'à 97% de confiance."
+    },
+    "b2": {
+      "title": "Analytiques & Insights",
+      "desc": "Suivez vos performances, surveillez les tendances patients et exportez des rapports complets depuis un tableau de bord professionnel."
+    },
+    "b3": {
+      "title": "Sécurisé & Conforme",
+      "desc": "Infrastructure conforme HIPAA avec chiffrement de niveau bancaire. Les données de vos patients sont protégées à chaque étape."
+    }
+  },
+  "cta": {
+    "title": "Rejoignez Notre Réseau Partenaire",
+    "subtitle": "Candidatez dès aujourd'hui et obtenez un accès vérifié à la plateforme de radiologie IA la plus avancée",
+    "button": "Candidater comme Radiologue Partenaire"
+  }
+},
+  "reset": {
+  "title": "Nouveau Mot de Passe",
+  "subtitle": "Choisissez un mot de passe fort pour votre compte RadiSense AI",
+  "newPassword": "Nouveau Mot de Passe",
+  "confirmPassword": "Confirmer le Mot de Passe",
+  "placeholder": "Au moins 8 caractères",
+  "confirmPlaceholder": "Répétez votre mot de passe",
+  "submit": "Définir le Nouveau Mot de Passe",
+  "loading": "Mise à jour…",
+  "match": "Les mots de passe correspondent",
+  "noMatch": "Les mots de passe ne correspondent pas",
+  "back": "Retour à la Connexion",
+  "requirements": "Exigences",
+  "req1": "Au moins 8 caractères",
+  "req2": "Une lettre majuscule",
+  "req3": "Un chiffre",
+  "strength": {
+    "weak": "Faible",
+    "fair": "Moyen",
+    "good": "Bon",
+    "strong": "Fort"
+  },
+  "success": {
+    "title": "Mot de Passe Mis à Jour !",
+    "desc": "Votre mot de passe a été réinitialisé avec succès. Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.",
+    "login": "Se Connecter"
+  },
+  "error": {
+    "expired": "Ce lien a expiré. Veuillez en demander un nouveau.",
+    "invalid": "Ce lien est invalide. Veuillez en demander un nouveau.",
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "minLength": "Le mot de passe doit contenir au moins 8 caractères.",
+    "noMatch": "Les mots de passe ne correspondent pas.",
+    "newLink": "Demander un nouveau lien"
+  }
+},
+  "dashboard": {
+    "radiologist": {
+      "schedule": {
+        "title": "Mon Agenda",
+        "subtitle": "Gérez vos rendez-vous patients",
+        "badge": "Portail Radiologue",
+        "stats": {
+          "total": "Total",
+          "pending": "En attente",
+          "confirmed": "Confirmé",
+          "today": "Aujourd'hui"
+        },
+        "tabs": {
+          "upcoming": "À venir",
+          "past": "Passés"
+        },
+        "actions": {
+          "details": "Détails",
+          "confirm": "Confirmer",
+          "complete": "Terminer",
+          "cancel": "Annuler",
+          "close": "Fermer",
+          "confirmAppt": "Confirmer le rendez-vous",
+          "markComplete": "Marquer comme terminé",
+          "cancelAppt": "Annuler le rendez-vous"
+        },
+        "modal": {
+          "title": "Détails du rendez-vous",
+          "patient": "PATIENT",
+          "type": "TYPE",
+          "status": "STATUT",
+          "location": "LIEU",
+          "time": "HEURE",
+          "notes": "NOTES",
+          "notesPlaceholder": "Ajouter des notes..."
+        },
+        "empty": "Aucun rendez-vous {{tab}}",
+        "emptySubtitle": "Votre agenda est libre pour cette période",
+        "loading": "Chargement de l'agenda…"
+      }
+    },
+    "badge": "Portail Radiologue" ,
+    "welcome": "Bon retour",
+    "subtitle": "Voici ce qui se passe avec vos analyses aujourd'hui",
+    "newAnalysis": "Nouvelle analyse",
+    "stats": {
+      "totalAnalyses": "Total des analyses",
+      "accuracy": "Taux de précision",
+      "patients": "Total des patients",
+      "pending": "En attente de révision",
+      "change": {
+        "month":    "par rapport au mois dernier",
+        "week":     "nouveaux cette semaine",
+        "awaiting": "En attente de validation",
+        "total":    "Total prédictions",
+        "completed":"Taux de complétion"
+      }
+    },
+    "quickActions": "Actions rapides",
+    "action": {
+      "upload": {
+        "title": "Télécharger une radio",
+        "desc": "Analyser une nouvelle image radiographique"
+      },
+      "patients": {
+        "title": "Gérer les patients",
+        "desc": "Voir et modifier les dossiers patients"
+      },
+      "analytics": {
+        "title": "Voir les analyses",
+        "desc": "Explorer les statistiques détaillées"
+      }
+    },
+    "recent": "Analyses récentes",
+    "viewAll": "Voir tout",
+    "table": {
+      "patient": "Patient",
+      "date": "Date",
+      "pathology": "Pathologie",
+      "confidence": "Confiance",
+      "status": "Statut",
+      "actions": "Actions",
+      "view": "Voir"
+    },
+    "status": {
+      "completed": "Terminé",
+      "pending": "En attente",
+      "failed": "Échoué"
+    },
+    "charts": {
+      "title": "Tendances d'analyse",
+      "monthly": "Analyses mensuelles",
+      "distribution": "Distribution des pathologies",
+      "pathologies": "Pathologies"
+    },
+    "pathology": {
+      "normal": "Normal",
+      "pneumonia": "Pneumonie",
+      "effusion": "Épanchement"
+    }
+  },
+  "upload": {
+    "title": "Télécharger et analyser",
+    "subtitle": "Téléchargez une image radiographique thoracique pour une analyse par IA",
+    "dragDrop": "Glissez-déposez votre image radiographique ici",
+    "or": "ou",
+    "browse": "Parcourir les fichiers",
+    "supported": "Formats supportés : JPG, PNG, DICOM (Max 10Mo)",
+    "selected": "Fichier sélectionné",
+    "remove": "Supprimer",
+    "analyzing": "Analyse en cours...",
+    "analyze": "Analyser l'image",
+    "selectPatient": "Sélectionner un patient",
+    "selectModel": "Sélectionner le modèle IA",
+    "notes": "Notes cliniques (Optionnel)",
+    "notesPlaceholder": "Ajoutez des observations cliniques pertinentes...",
+    "patient": {
+      "placeholder": "Choisir un patient ou en créer un nouveau",
+      "new": "Créer un nouveau patient"
+    },
+    "model": {
+      "densenet": "DenseNet-121 (Recommandé)",
+      "resnet": "ResNet-50",
+      "efficientnet": "EfficientNet-B0",
+      "vgg": "VGG-16",
+      "mobilenet": "MobileNet-V2"
+    },
+    "error": {
+      "fileType": "Type de fichier invalide. Veuillez télécharger JPG, PNG ou DICOM.",
+      "fileSize": "Fichier trop volumineux. Taille maximale : 10Mo.",
+      "noFile": "Veuillez sélectionner une image à analyser.",
+      "noPatient": "Veuillez sélectionner un patient."
+    },
+    "success": "Analyse terminée avec succès !"
+  },
+  "results": {
+    "title": "Résultats de l'analyse",
+    "subtitle": "Analyse de radiographie thoracique par IA terminée",
+    "patient": "Patient",
+    "date": "Date d'analyse",
+    "model": "Modèle IA",
+    "confidence": "Confiance globale",
+    "status": "Statut",
+    "processing": "Temps de traitement",
+    "tab": {
+      "overview": "Aperçu",
+      "pathologies": "Pathologies",
+      "heatmap": "Carte thermique",
+      "report": "Rapport",
+      "model": "Métriques du modèle"
+    },
+    "overview": {
+      "title": "Aperçu de l'analyse",
+      "findings": "Résultats clés",
+      "recommendation": "Recommandation",
+      "notes": "Notes cliniques"
+    },
+    "pathologies": {
+      "title": "Pathologies détectées",
+      "detected": "pathologies détectées",
+      "high": "Risque élevé",
+      "medium": "Risque moyen",
+      "low": "Risque faible"
+    },
+    "pathology": {
+      "atelectasis": "Atélectasie",
+      "cardiomegaly": "Cardiomégalie",
+      "effusion": "Épanchement",
+      "infiltration": "Infiltration",
+      "mass": "Masse",
+      "nodule": "Nodule",
+      "pneumonia": "Pneumonie",
+      "pneumothorax": "Pneumothorax",
+      "consolidation": "Consolidation",
+      "edema": "Œdème",
+      "emphysema": "Emphysème",
+      "fibrosis": "Fibrose",
+      "pleural_thickening": "Épaississement pleural",
+      "cardiomegalie": "Cardiomégalie",
+      "epanchement": "Épanchement",
+      "epaississementpleural": "Épaississement Pleural",
+      "pleuralthickening": "Épaississement Pleural",
+      "normal": "Normal",
+      "hernia": "Hernie"
+    },
+    "heatmap": {
+      "title": "Visualisation Grad-CAM",
+      "description": "Carte thermique montrant les zones d'intérêt pour le modèle IA",
+      "original": "Image originale",
+      "overlay": "Superposition thermique",
+      "intensity": "Intensité"
+    },
+    "actions": {
+      "download": "Télécharger le rapport",
+      "share": "Partager",
+      "print": "Imprimer",
+      "newAnalysis": "Nouvelle analyse",
+      "validate": "Valider les résultats"
+    },
+    "report": {
+      "generating": "Génération du rapport complet...",
+      "title": "Rapport médical"
+    }
+  },
+  "patients": {
+    "title": "Gestion des patients",
+    "subtitle": "Gérer les dossiers et l'historique médical des patients",
+    "addNew": "Ajouter un patient",
+    "search": "Rechercher des patients...",
+    "filterAll": "Tous les patients",
+    "filterActive": "Actifs",
+    "filterInactive": "Inactifs",
+    "years": "ans",
+    "table": {
+      "id": "ID Patient",
+      "name": "Nom",
+      "age": "Âge",
+      "gender": "Sexe",
+      "analyses": "Analyses",
+      "lastVisit": "Dernière visite",
+      "status": "Statut",
+      "actions": "Actions"
+    },
+    "action": {
+      "view": "Voir",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "newAnalysis": "Nouvelle analyse"
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "modal": {
+      "title": "Ajouter un patient",
+      "edit": "Modifier le patient"
+    },
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "dateOfBirth": "Date de naissance",
+      "gender": "Sexe",
+      "email": "Email",
+      "phone": "Numéro de téléphone",
+      "address": "Adresse",
+      "medicalHistory": "Antécédents médicaux",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    },
+    "gender": {
+      "male": "Homme",
+      "female": "Femme",
+      "other": "Autre"
+    }
+  },
+  "analytics": {
+    "title": "Tableau de bord analytique",
+    "subtitle": "Aperçus complets et métriques de performance",
+    "overview": {
+      "title": "Aperçu des performances"
+    },
+    "stats": {
+      "totalAnalyses": "Total des analyses",
+      "avgAccuracy": "Précision moyenne",
+      "totalPatients": "Total des patients",
+      "avgProcessing": "Temps de traitement moyen"
+    },
+    "charts": {
+      "monthly": "Tendances d'analyse mensuelles",
+      "pathology": "Distribution des pathologies",
+      "accuracy": "Précision par modèle",
+      "timeline": "Chronologie des analyses"
+    },
+    "pathology": {
+      "title": "Principales pathologies détectées",
+      "cases": "cas",
+      "accuracy": "précision"
+    },
+    "model": {
+      "title": "Comparaison des performances des modèles",
+      "accuracy": "Précision",
+      "speed": "Vitesse moyenne",
+      "analyses": "Total des analyses"
+    },
+    "export": {
+      "title": "Exporter les données",
+      "csv": "Exporter CSV",
+      "excel": "Exporter Excel",
+      "pdf": "Exporter rapport PDF"
+    },
+    "period": {
+      "7days": "7 derniers jours",
+      "30days": "30 derniers jours",
+      "3months": "3 derniers mois",
+      "year": "Cette année",
+      "all": "Tout le temps"
+    }
+  },
+  "news": {
+    "title": "Actualités et recherche",
+    "subtitle": "Dernières mises à jour en radiologie pulmonaire et diagnostic par IA",
+    "featured": "Article en vedette",
+    "readMore": "Lire plus",
+    "readTime": "min de lecture",
+    "author": "Par",
+    "date": "Publié le",
+    "categories": "Catégories",
+    "all": "Toutes les actualités",
+    "research": "Recherche",
+    "technology": "Technologie",
+    "medical": "Mises à jour médicales",
+    "casestudies": "Études de cas",
+    "search": "Rechercher des articles...",
+    "latestNews": "Dernières nouvelles",
+    "popularArticles": "Articles populaires",
+    "relatedArticles": "Articles connexes",
+    "share": "Partager l'article",
+    "subscribe": "S'abonner à la newsletter",
+    "subscribeDesc": "Recevez les dernières mises à jour dans votre boîte mail",
+    "emailPlaceholder": "Entrez votre email",
+    "subscribeBtn": "S'abonner"
+  },
+  "article": {
+    "backToNews": "Retour aux actualités",
+    "tableOfContents": "Table des matières",
+    "summary": "Résumé",
+    "keyTakeaways": "Points clés",
+    "conclusion": "Conclusion",
+    "references": "Références"
+  },
+  "pathology": {
+    "encyclopedia": "Encyclopédie des pathologies",
+    "subtitle": "Guide complet des pathologies et conditions thoraciques",
+    "explore": "Explorer",
+    "learnMore": "En savoir plus",
+    "overview": "Vue d'ensemble",
+    "symptoms": "Symptômes",
+    "causes": "Causes",
+    "diagnosis": "Diagnostic",
+    "treatment": "Traitement",
+    "prevention": "Prévention",
+    "statistics": "Statistiques",
+    "prevalence": "Prévalence",
+    "mortality": "Taux de mortalité",
+    "detection": "Précision de détection",
+    "relatedConditions": "Conditions associées",
+    "aiInsights": "Aperçus IA",
+    "medicalAdvice": "Consultez toujours un professionnel de santé pour un avis médical",
+    "searchPlaceholder": "Rechercher des pathologies...",
+    "filterAll": "Toutes",
+    "filterCommon": "Plus courantes",
+    "filterSerious": "Graves",
+    "sortBy": "Trier par",
+    "sortName": "Nom",
+    "sortPrevalence": "Prévalence",
+    "atelectasis": {
+      "name": "Atélectasie",
+      "desc": "Effondrement partiel ou complet du tissu pulmonaire"
+    },
+    "cardiomegaly": {
+      "name": "Cardiomégalie",
+      "desc": "Élargissement du cœur"
+    },
+    "effusion": {
+      "name": "Épanchement pleural",
+      "desc": "Accumulation de liquide dans l'espace pleural"
+    },
+    "infiltration": {
+      "name": "Infiltration",
+      "desc": "Substance anormale dans le tissu pulmonaire"
+    },
+    "mass": {
+      "name": "Masse",
+      "desc": "Croissance anormale ou tumeur dans les poumons"
+    },
+    "nodule": {
+      "name": "Nodule",
+      "desc": "Petite croissance ronde dans le tissu pulmonaire"
+    },
+    "pneumonia": {
+      "name": "Pneumonie",
+      "desc": "Infection causant une inflammation pulmonaire"
+    },
+    "pneumothorax": {
+      "name": "Pneumothorax",
+      "desc": "Poumon effondré en raison d'une fuite d'air"
+    },
+    "consolidation": {
+      "name": "Consolidation",
+      "desc": "Tissu pulmonaire rempli de liquide"
+    },
+    "edema": {
+      "name": "Œdème pulmonaire",
+      "desc": "Liquide dans les alvéoles pulmonaires"
+    },
+    "emphysema": {
+      "name": "Emphysème",
+      "desc": "Dommages aux alvéoles pulmonaires"
+    },
+    "fibrosis": {
+      "name": "Fibrose",
+      "desc": "Cicatrisation et épaississement du tissu pulmonaire"
+    },
+    "pleural_thickening": {
+      "name": "Épaississement pleural",
+      "desc": "Épaississement de la membrane pleurale"
+    },
+    "hernia": {
+      "name": "Hernie hiatale",
+      "desc": "L'estomac pousse à travers le diaphragme"
+    },
+    "tuberculosis": {
+      "name": "Tuberculose",
+      "desc": "Infection bactérienne causant des lésions pulmonaires et une maladie systémique"
+    }
+  },
+  "about": {
+    "title": "À propos de RadiSense AI",
+    "subtitle": "Révolutionner l'imagerie médicale avec l'intelligence artificielle",
+    "hero": {
+      "tagline": "Pionnier de l'avenir de la radiologie diagnostique"
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "text": "Donner aux professionnels de santé les moyens d'agir grâce à une technologie IA de pointe, permettant des diagnostics plus rapides et plus précis, et sauvant des vies grâce à la détection précoce des pathologies thoraciques."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "text": "Un monde où chaque analyse de radiographie thoracique est améliorée par l'IA, réduisant les erreurs de diagnostic, améliorant les résultats des patients et rendant les soins de qualité accessibles à tous."
+    },
+    "values": {
+      "title": "Nos Valeurs"
+    },
+    "value": {
+      "innovation": "Innovation",
+      "innovation_desc": "Repousser les limites avec l'apprentissage profond",
+      "accuracy": "Précision",
+      "accuracy_desc": "Plus de 84% de précision sur 14 pathologies thoraciques",
+      "speed": "Rapidité",
+      "speed_desc": "Analyse en moins de 3 secondes pour un diagnostic rapide",
+      "accessibility": "Accessibilité",
+      "accessibility_desc": "Rendre les diagnostics IA disponibles mondialement"
+    },
+    "timeline": {
+      "title": "Notre Parcours",
+      "2023q1": "Lancement du Projet",
+      "2023q1_desc": "Phase de recherche avec collecte de 112 000+ radiographies",
+      "2023q3": "Développement du Modèle",
+      "2023q3_desc": "5 modèles d'apprentissage profond entraînés et comparés",
+      "2024q1": "Essais Cliniques",
+      "2024q1_desc": "Validation avec 500+ radiologues atteignant 84% de précision",
+      "2024q3": "Lancement de la Plateforme",
+      "2024q3_desc": "Version bêta publique avec capacités de prédiction en temps réel",
+      "2025q2": "Expansion Mondiale",
+      "2025q2_desc": "30 000+ analyses effectuées dans 15 pays",
+      "2026q1": "Aujourd'hui",
+      "2026q1_desc": "Plateforme IA de radiologie leader, approuvée par les professionnels de santé"
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "subtitle": "Experts en IA, médecine et technologie de santé",
+      "role": {
+        "ceo": "PDG & Co-fondatrice",
+        "cto": "CTO & Co-fondateur",
+        "chief_medical": "Directeur Médical",
+        "head_ai": "Responsable Recherche IA",
+        "lead_eng": "Ingénieur Principal",
+        "head_product": "Responsable Produit"
+      }
+    },
+    "stats": {
+      "analyses": "Analyses Effectuées",
+      "accuracy": "Précision Moyenne",
+      "radiologists": "Professionnels de Santé",
+      "countries": "Pays dans le Monde",
+      "saved": "Vies Potentiellement Sauvées",
+      "detection": "Taux de Détection Précoce"
+    },
+    "cta": {
+      "title": "Prêt à Transformer Votre Pratique ?",
+      "subtitle": "Rejoignez des milliers de professionnels utilisant les diagnostics par IA",
+      "button": "Commencer Aujourd'hui"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "subtitle": "Choisissez le plan parfait pour votre pratique",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "Économisez 20%",
+    "mostPopular": "Plus populaire",
+    "startTrial": "Essai gratuit",
+    "choosePlan": "Choisir ce plan",
+    "currentPlan": "Plan actuel",
+    "perMonth": "/mois",
+    "perYear": "/an",
+    "billedMonthly": "Facturé mensuellement",
+    "billedYearly": "Facturé annuellement",
+    "free": {
+      "name": "Basique",
+      "desc": "Parfait pour les praticiens individuels débutants",
+      "price": "Gratuit",
+      "feature1": "10 analyses par mois",
+      "feature2": "Détection de pathologies basique",
+      "feature3": "Précision standard",
+      "feature4": "Support par email",
+      "feature5": "Accès web"
+    },
+    "pro": {
+      "name": "Professionnel",
+      "desc": "Idéal pour les radiologues et cliniques",
+      "price": "49",
+      "feature1": "500 analyses par mois",
+      "feature2": "Les 14 pathologies",
+      "feature3": "84%+ de précision",
+      "feature4": "Cartes thermiques Grad-CAM",
+      "feature5": "Support prioritaire",
+      "feature6": "Analyses avancées",
+      "feature7": "Export rapports (PDF)",
+      "feature8": "Accès API"
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "desc": "Pour hôpitaux et grandes organisations",
+      "price": "Sur mesure",
+      "feature1": "Analyses illimitées",
+      "feature2": "Toutes les fonctionnalités",
+      "feature3": "Formation de modèle personnalisé",
+      "feature4": "Support dédié",
+      "feature5": "Déploiement sur site",
+      "feature6": "Conformité HIPAA",
+      "feature7": "Garantie SLA",
+      "feature8": "Intégrations personnalisées",
+      "feature9": "Gestion d'équipe",
+      "feature10": "Sécurité avancée"
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "q1": "Puis-je changer de plan à tout moment ?",
+      "a1": "Oui, vous pouvez passer à un plan supérieur ou inférieur à tout moment.",
+      "q2": "Y a-t-il un essai gratuit ?",
+      "a2": "Oui ! Tous les plans payants incluent un essai gratuit de 14 jours.",
+      "q3": "Quels moyens de paiement acceptez-vous ?",
+      "a3": "Nous acceptons toutes les cartes bancaires, PayPal et virements bancaires.",
+      "q4": "Puis-je annuler à tout moment ?",
+      "a4": "Oui, vous pouvez annuler votre abonnement à tout moment sans pénalité.",
+      "q5": "Offrez-vous des réductions académiques ?",
+      "a5": "Oui ! Nous offrons 50% de réduction pour les institutions éducatives.",
+      "q6": "Mes données sont-elles sécurisées ?",
+      "a6": "Absolument. Nous utilisons un chiffrement bancaire et sommes conformes HIPAA."
+    },
+    "comparison": {
+      "title": "Comparer les plans",
+      "feature": "Fonctionnalité",
+      "analyses": "Analyses mensuelles",
+      "pathologies": "Détection pathologies",
+      "accuracy": "Précision IA",
+      "heatmaps": "Cartes thermiques",
+      "support": "Support",
+      "analytics": "Tableau de bord",
+      "api": "Accès API",
+      "export": "Export rapports",
+      "training": "Formation personnalisée",
+      "onpremise": "Sur site"
+    }
+  },
+  "patient": {
+    "dashboard": {
+      "title": "Mon tableau de bord santé",
+      "subtitle": "Suivez vos analyses médicales et dossiers de santé",
+      "welcome": "Bon retour"
+    },
+    "stats": {
+      "totalAnalyses": "Total des analyses",
+      "pendingResults": "Résultats en attente",
+      "appointments": "Rendez-vous à venir",
+      "reports": "Rapports médicaux"
+    },
+    "actions": {
+      "title": "Actions rapides",
+      "bookAppointment": "Prendre rendez-vous",
+      "viewRecords": "Voir le dossier médical",
+      "uploadImage": "Demander une analyse",
+      "contact": "Contacter le radiologue"
+    },
+    "recentAnalyses": {
+      "title": "Analyses récentes",
+      "viewAll": "Voir toutes les analyses",
+      "noResults": "Aucune analyse pour le moment",
+      "requestFirst": "Demandez votre première analyse"
+    },
+    "records": {
+      "title": "Mon dossier médical",
+      "subtitle": "Accédez à votre historique médical complet",
+      "personalInfo": "Informations personnelles",
+      "medicalHistory": "Antécédents médicaux",
+      "allergies": "Allergies",
+      "medications": "Médicaments actuels",
+      "conditions": "Conditions médicales",
+      "bloodType": "Groupe sanguin",
+      "emergencyContact": "Contact d'urgence",
+      "edit": "Modifier les informations"
+    },
+    "appointments": {
+      "title": "Mes rendez-vous",
+      "subtitle": "Planifiez et gérez vos rendez-vous",
+      "book": "Nouveau rendez-vous",
+      "upcoming": "Rendez-vous à venir",
+      "past": "Rendez-vous passés",
+      "noUpcoming": "Aucun rendez-vous à venir",
+      "date": "Date",
+      "time": "Heure",
+      "doctor": "Médecin",
+      "type": "Type",
+      "status": "Statut",
+      "cancel": "Annuler",
+      "reschedule": "Reprogrammer",
+      "confirmed": "Confirmé",
+      "pending": "En attente",
+      "cancelConfirmedTitle": "Annuler un Rendez-vous Confirmé",
+      "cancelConfirmedWarning": "Ce rendez-vous a déjà été confirmé par le médecin. Veuillez fournir une raison pour qu'il soit notifié.",
+      "cancelReasonLabel": "Raison de l'annulation",
+      "cancelReasonPlaceholder": "ex. Urgence personnelle, conflit d'agenda, problème de santé...",
+      "keepAppointment": "Garder le Rendez-vous",
+      "confirmCancellation": "Confirmer l'Annulation"
+    },
+    "myAnalyses": {
+      "title": "Historique de mes analyses",
+      "subtitle": "Consultez toutes vos analyses radiographiques",
+      "filterAll": "Toutes",
+      "filterCompleted": "Terminées",
+      "filterPending": "En attente",
+      "sortDate": "Trier par date",
+      "sortStatus": "Trier par statut"
+    },
+    "education": {
+      "title": "Éducation à la santé",
+      "subtitle": "Apprenez sur les pathologies thoraciques et la santé pulmonaire",
+      "recommended": "Recommandé pour vous",
+      "categories": "Catégories",
+      "prevention": "Prévention",
+      "symptoms": "Symptômes",
+      "treatment": "Traitement",
+      "lifestyle": "Mode de vie"
+    },
+    "radiologists": {
+      "title": "Mon équipe médicale",
+      "subtitle": "Connectez-vous avec vos radiologues et spécialistes",
+      "primary": "Radiologue principal",
+      "specialists": "Spécialistes",
+      "message": "Envoyer un message",
+      "viewProfile": "Voir le profil",
+      "requestSecondOpinion": "Demander un deuxième avis"
+    }
+  },
+  "admin": {
+    "requests": {
+      "subtitle": "Examiner et gérer toutes les demandes d'inscription avec infos de paiement",
+      "refresh": "Actualiser",
+      "total": "Total",
+      "pending": "En attente",
+      "approved": "Approuvées",
+      "rejected": "Rejetées",
+      "all": "Toutes",
+      "noRequests": "Aucune demande {{filter}}",
+      "review": "Examiner",
+      "quickReject": "Rejeter rapidement",
+      "view": "Voir",
+      "approveCreate": "Approuver & Créer le compte",
+      "reject": "Rejeter",
+      "rejectTitle": "Rejeter la demande",
+      "rejectingFrom": "Rejet de la demande de",
+      "paidWarning": "Cet utilisateur a payé — son abonnement sera annulé.",
+      "rejectReason": "Raison du rejet",
+      "confirmReject": "Confirmer le rejet",
+      "professionalDetails": "Détails professionnels",
+      "rejectionReason": "Raison du rejet",
+      "approvedSuccess": "Approuvé ! Compte créé : {{username}}",
+      "rejectedSuccess": "Demande rejetée. Utilisateur notifié par email.",
+      "reasonRequired": "Veuillez fournir une raison"
+    },
+    "patients": {
+      "withAccounts": "Avec Compte",
+      "assignRadiologist": "Assigner un Radiologue",
+      "assignTitle": "Assigner à un Radiologue",
+      "assignedRadiologists": "Radiologues Assignés",
+      "chooseRadiologist": "Choisir un radiologue..."
+    },
+    "appointments": {
+      "title": "Rendez-vous",
+      "subtitle": "Surveiller et gérer tous les rendez-vous de la plateforme",
+      "badge": "Panneau Admin",
+      "stats": {
+        "total": "Total",
+        "pending": "En attente",
+        "confirmed": "Confirmé",
+        "completed": "Terminé",
+        "cancelled": "Annulé",
+        "today": "Aujourd'hui"
+      },
+      "filter": {
+        "all": "Tous",
+        "label": "Filtrer :"
+      },
+      "table": {
+        "dateTime": "Date & Heure",
+        "patient": "Patient",
+        "radiologist": "Radiologue",
+        "type": "Type",
+        "status": "Statut",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending": "En attente",
+        "confirmed": "Confirmé",
+        "completed": "Terminé",
+        "cancelled": "Annulé"
+      },
+      "modal": {
+        "title": "Rendez-vous #",
+        "patient": "PATIENT",
+        "radiologist": "RADIOLOGUE",
+        "type": "TYPE",
+        "location": "LIEU",
+        "notes": "NOTES",
+        "changeStatus": "CHANGER LE STATUT",
+        "close": "Fermer",
+        "delete": "Supprimer",
+        "cancellationReason": "Raison d'annulation"
+      },
+      "empty": "Aucun rendez-vous trouvé",
+      "loading": "Chargement des rendez-vous…"
+    },
+    "dashboard": {
+      "title": "Tableau de bord Admin",
+      "subtitle": "Aperçu et gestion du système",
+      "welcome": "Bon retour, Administrateur"
+    },
+    "stats": {
+      "totalUsers": "Total Utilisateurs",
+      "activeAnalyses": "Analyses Actives",
+      "systemHealth": "État du Système",
+      "revenue": "Revenu Mensuel",
+      "newUsers": "Nouveaux Utilisateurs (30j)",
+      "totalAnalyses": "Total Analyses",
+      "avgAccuracy": "Précision Moyenne",
+      "uptime": "Disponibilité Système"
+    },
+    "actions": {
+      "title": "Actions Rapides",
+      "manageUsers": "Gérer Utilisateurs",
+      "viewLogs": "Voir Journaux",
+      "systemSettings": "Paramètres Système",
+      "modelManagement": "Gestion Modèles"
+    },
+    "activity": {
+      "title": "Activité Récente",
+      "viewAll": "Voir Tous les Journaux"
+    },
+    "system": {
+      "title": "État du Système",
+      "api": "Serveur API",
+      "database": "Base de Données",
+      "storage": "Stockage",
+      "ml": "Services ML",
+      "operational": "Opérationnel",
+      "warning": "Avertissement",
+      "error": "Erreur"
+    },
+    "users": {
+      "title": "Gestion des Utilisateurs",
+      "subtitle": "Gérer tous les utilisateurs et permissions",
+      "addNew": "Ajouter Utilisateur",
+      "search": "Rechercher des utilisateurs...",
+      "filterAll": "Tous",
+      "filterAdmins": "Administrateurs",
+      "filterRadiologists": "Radiologues",
+      "filterPatients": "Patients",
+      "filterResearchers": "Chercheurs",
+      "table": {
+        "name": "Nom",
+        "email": "Email",
+        "role": "Rôle",
+        "status": "Statut",
+        "joined": "Inscrit",
+        "analyses": "Analyses",
+        "actions": "Actions"
+      },
+      "action": {
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "suspend": "Suspendre",
+        "activate": "Activer",
+        "viewProfile": "Voir Profil"
+      },
+      "status": {
+        "active": "Actif",
+        "suspended": "Suspendu",
+        "inactive": "Inactif"
+      },
+      "role": {
+        "admin": "Administrateur",
+        "radiologist": "Radiologue",
+        "patient": "Patient",
+        "researcher": "Chercheur"
+      },
+      "modal": {
+        "title": "Ajouter Utilisateur",
+        "edit": "Modifier Utilisateur",
+        "editing": "Modification de",
+        "subtitle": "Créer un nouveau compte plateforme",
+        "rolePermission": "Ce compte aura les permissions",
+        "permissions": ""
+      },
+      "form": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Email",
+        "role": "Rôle",
+        "password": "Mot de passe",
+        "status": "Statut",
+        "cancel": "Annuler",
+        "save": "Enregistrer",
+        "saveChanges": "Sauvegarder les modifications",
+        "createUser": "Créer l'utilisateur"
+      }
+    },
+    "monitoring": {
+      "title": "Surveillance Système",
+      "subtitle": "Métriques de santé et performance en temps réel",
+      "performance": "Métriques de Performance",
+      "cpu": "Utilisation CPU",
+      "memory": "Utilisation Mémoire",
+      "disk": "Utilisation Disque",
+      "network": "Trafic Réseau",
+      "services": "État des Services",
+      "apiServer": "Serveur API",
+      "database": "Base MySQL",
+      "mlflow": "Serveur MLflow",
+      "redis": "Cache Redis",
+      "nginx": "Nginx",
+      "liveStats": "Statistiques en Direct",
+      "activeUsers": "Utilisateurs Actifs",
+      "requestsPerMin": "Requêtes/min",
+      "avgResponseTime": "Temps Réponse Moyen",
+      "errorRate": "Taux d'Erreur",
+      "recentLogs": "Journaux Système Récents",
+      "viewAllLogs": "Voir Tous les Journaux",
+      "level": {
+        "info": "Info",
+        "warning": "Avertissement",
+        "error": "Erreur"
+      },
+      "restart": "Redémarrer Service",
+      "clearCache": "Vider Cache",
+      "exportLogs": "Exporter Journaux"
+    },
+    "models": {
+      "title": "Gestion des Modèles",
+      "subtitle": "Gérer les modèles IA et pipelines d'entraînement",
+      "deployNew": "Déployer Nouveau Modèle",
+      "active": "Modèles Actifs",
+      "archived": "Modèles Archivés",
+      "modelName": "Nom du Modèle",
+      "version": "Version",
+      "accuracy": "Précision",
+      "status": "Statut",
+      "deployed": "Déployé",
+      "lastUpdated": "Dernière MAJ",
+      "predictions": "Prédictions",
+      "status_values": {
+        "production": "Production",
+        "staging": "Test",
+        "training": "Entraînement",
+        "archived": "Archivé"
+      },
+      "action": {
+        "viewMetrics": "Voir Métriques",
+        "retrain": "Réentraîner",
+        "archive": "Archiver",
+        "activate": "Activer",
+        "download": "Télécharger"
+      },
+      "details": "Détails du Modèle",
+      "architecture": "Architecture",
+      "framework": "Framework",
+      "inputSize": "Taille Entrée",
+      "parameters": "Paramètres",
+      "trainingTime": "Temps Entraînement",
+      "dataset": "Dataset",
+      "performance": "Métriques de Performance",
+      "precision": "Précision",
+      "recall": "Rappel",
+      "f1Score": "Score F1",
+      "auc": "AUC-ROC",
+      "training": {
+        "title": "Historique Entraînement",
+        "epoch": "Époque",
+        "loss": "Perte",
+        "valLoss": "Perte Val",
+        "viewLogs": "Voir Journaux"
+      }
+    },
+    "logs": {
+      "title": "Journaux d'Audit",
+      "subtitle": "Suivre toutes les activités système et actions utilisateur",
+      "export": "Exporter Journaux",
+      "clearFilters": "Effacer Filtres",
+      "filterByLevel": "Filtrer par Niveau",
+      "filterByService": "Filtrer par Service",
+      "filterByUser": "Filtrer par Utilisateur",
+      "search": "Rechercher dans les journaux...",
+      "dateRange": "Plage de Dates",
+      "level": {
+        "all": "Tous Niveaux",
+        "info": "Info",
+        "warning": "Avertissement",
+        "error": "Erreur",
+        "critical": "Critique",
+        "success": "Succès"
+      },
+      "service": {
+        "all": "Tous Services",
+        "api": "API",
+        "database": "Base de Données",
+        "ml": "Services ML",
+        "auth": "Authentification",
+        "system": "Système"
+      },
+      "table": {
+        "timestamp": "Horodatage",
+        "level": "Niveau",
+        "service": "Service",
+        "user": "Utilisateur",
+        "action": "Action",
+        "details": "Détails"
+      },
+      "action": {
+        "viewDetails": "Voir Détails",
+        "download": "Télécharger",
+        "analysisPrediction": "Prédiction d'analyse"
+
+      },
+      "stats": {
+        "totalLogs": "Total Journaux",
+        "errors": "Erreurs",
+        "warnings": "Avertissements",
+        "todayActivity": "Activité Aujourd'hui"
+      }
+    },
+    "database": {
+      "title": "Gestion Base de Données",
+      "subtitle": "Gérer les opérations et performances de la base",
+      "overview": "Aperçu Base de Données",
+      "totalRecords": "Total Enregistrements",
+      "storageUsed": "Stockage Utilisé",
+      "backups": "Sauvegardes",
+      "lastBackup": "Dernière Sauvegarde",
+      "tables": "Tables Base de Données",
+      "table": {
+        "name": "Nom Table",
+        "records": "Enregistrements",
+        "size": "Taille",
+        "lastModified": "Dernière Modification",
+        "actions": "Actions"
+      },
+      "action": {
+        "backup": "Sauvegarder BD",
+        "restore": "Restaurer",
+        "optimize": "Optimiser",
+        "export": "Exporter",
+        "vacuum": "Nettoyer",
+        "analyze": "Analyser"
+      },
+      "backup": {
+        "title": "Historique Sauvegardes",
+        "status": "Statut",
+        "size": "Taille",
+        "duration": "Durée",
+        "download": "Télécharger"
+      },
+      "status": {
+        "completed": "Terminé",
+        "running": "En cours",
+        "failed": "Échoué"
+      },
+      "operations": {
+        "title": "Opérations Récentes",
+        "type": "Type",
+        "status": "Statut",
+        "time": "Heure"
+      },
+      "performance": {
+        "title": "Métriques Performance",
+        "queries": "Requêtes/sec",
+        "connections": "Connexions Actives",
+        "cacheHit": "Taux Cache",
+        "avgQuery": "Temps Requête Moyen"
+      }
+    },
+    "settings": {
+      "title": "Paramètres Système",
+      "subtitle": "Configurer les paramètres et préférences système",
+      "save": "Enregistrer",
+      "reset": "Réinitialiser",
+      "general": {
+        "title": "Paramètres Généraux",
+        "siteName": "Nom du Site",
+        "siteUrl": "URL du Site",
+        "adminEmail": "Email Admin",
+        "timezone": "Fuseau Horaire",
+        "language": "Langue par Défaut",
+        "maintenanceMode": "Mode Maintenance"
+      },
+      "security": {
+        "title": "Paramètres Sécurité",
+        "jwtExpiry": "Expiration Token JWT",
+        "maxLoginAttempts": "Tentatives Login Max",
+        "sessionTimeout": "Timeout Session",
+        "twoFactor": "Authentification 2FA",
+        "ipWhitelist": "Liste IP Autorisées",
+        "enabled": "Activé",
+        "disabled": "Désactivé"
+      },
+      "ml": {
+        "title": "Paramètres Modèles ML",
+        "defaultModel": "Modèle par Défaut",
+        "confidenceThreshold": "Seuil Confiance",
+        "maxBatchSize": "Taille Batch Max",
+        "autoRetrain": "Réentraînement Auto",
+        "gpuAcceleration": "Accélération GPU"
+      },
+      "email": {
+        "title": "Configuration Email",
+        "smtpHost": "Hôte SMTP",
+        "smtpPort": "Port SMTP",
+        "smtpUser": "Utilisateur SMTP",
+        "smtpPassword": "Mot de Passe SMTP",
+        "fromAddress": "Adresse Expéditeur",
+        "fromName": "Nom Expéditeur",
+        "testEmail": "Envoyer Test Email"
+      },
+      "storage": {
+        "title": "Paramètres Stockage",
+        "provider": "Fournisseur Stockage",
+        "maxFileSize": "Taille Fichier Max",
+        "allowedFormats": "Formats Autorisés",
+        "compressionEnabled": "Compression Images",
+        "retentionPeriod": "Période Rétention"
+      },
+      "backup": {
+        "title": "Paramètres Sauvegarde",
+        "autoBackup": "Sauvegarde Automatique",
+        "frequency": "Fréquence Sauvegarde",
+        "retention": "Rétention Sauvegardes",
+        "location": "Emplacement Sauvegarde"
+      },
+      "notifications": {
+        "title": "Paramètres Notifications",
+        "emailNotifications": "Notifications Email",
+        "slackWebhook": "Webhook Slack",
+        "criticalAlerts": "Alertes Critiques",
+        "weeklyReports": "Rapports Hebdo"
+      }
+    },
+    "reports": {
+      "title": "Générateur de Rapports",
+      "subtitle": "Générer des rapports système et analytiques complets",
+      "generate": "Générer Rapport",
+      "download": "Télécharger Rapport",
+      "schedule": "Planifier Rapport",
+      "types": {
+        "title": "Types de Rapports"
+      },
+      "type": {
+        "usage": "Analytiques Utilisation",
+        "performance": "Métriques Performance",
+        "financial": "Rapport Financier",
+        "user": "Activité Utilisateur",
+        "ml": "Performance Modèles ML",
+        "security": "Audit Sécurité"
+      },
+      "filters": {
+        "title": "Configuration Rapport",
+        "dateRange": "Plage de Dates",
+        "format": "Format Export",
+        "frequency": "Fréquence",
+        "recipients": "Destinataires Email"
+      },
+      "range": {
+        "today": "Aujourd'hui",
+        "week": "7 Derniers Jours",
+        "month": "30 Derniers Jours",
+        "quarter": "Dernier Trimestre",
+        "year": "Dernière Année",
+        "custom": "Plage Personnalisée"
+      },
+      "format": {
+        "pdf": "PDF",
+        "excel": "Excel (XLSX)",
+        "csv": "CSV",
+        "json": "JSON"
+      },
+      "freq": {
+        "once": "Unique",
+        "daily": "Quotidien",
+        "weekly": "Hebdomadaire",
+        "monthly": "Mensuel"
+      },
+      "recent": {
+        "title": "Rapports Récents",
+        "name": "Nom Rapport",
+        "type": "Type",
+        "generated": "Généré",
+        "size": "Taille",
+        "status": "Statut"
+      },
+      "status": {
+        "completed": "Terminé",
+        "processing": "En Cours",
+        "scheduled": "Planifié",
+        "failed": "Échoué"
+      },
+      "scheduled": {
+        "title": "Rapports Planifiés",
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "pause": "Pause",
+        "active": "Actif",
+        "paused": "En Pause"
+      }
+    }
+  },
+  "researcher": {
+    "dashboard": {
+      "title": "Tableau de Bord Recherche",
+      "subtitle": "Accéder aux datasets, entraîner des modèles et suivre les expériences",
+      "welcome": "Bon retour, Chercheur"
+    },
+    "stats": {
+      "datasets": "Datasets Disponibles",
+      "experiments": "Expériences Actives",
+      "models": "Modèles Entraînés",
+      "publications": "Publications"
+    },
+    "actions": {
+      "title": "Actions Rapides",
+      "newExperiment": "Nouvelle Expérience",
+      "uploadDataset": "Uploader Dataset",
+      "viewModels": "Voir Modèles",
+      "mlflow": "Ouvrir MLflow"
+    },
+    "activity": {
+      "title": "Activité Récente",
+      "viewAll": "Voir Tout"
+    },
+    "datasets": {
+      "title": "Mes Datasets",
+      "subtitle": "Enregistrez et gérez vos datasets d'imagerie médicale",
+      "register": "Enregistrer un Dataset",
+      "totalImages": "Total Images",
+      "training": "Entraînement",
+      "valTest": "Val / Test",
+      "modal": {
+        "register": "Enregistrer un Dataset",
+        "subtitle": "Ajoutez les métadonnées d'un dataset d'imagerie médicale",
+        "name": "Nom du Dataset",
+        "description": "Description",
+        "type": "Type",
+        "size": "Nombre d'Images",
+        "source": "Source / Institution",
+        "format": "Format des Images",
+        "resolution": "Résolution",
+        "license": "Licence",
+        "diseases": "Classes / Pathologies",
+        "diseasePlaceholder": "Tapez une classe et appuyez sur Entrée ou Ajouter…",
+        "add": "Ajouter",
+        "cancel": "Annuler",
+        "submit": "Enregistrer le Dataset",
+        "submitting": "Enregistrement…"
+      },
+      "details": "Voir les Détails",
+      "delete": "Supprimer",
+      "deleteConfirm": "Supprimer ce dataset définitivement ?",
+      "noDatasets": "Aucun dataset enregistré",
+      "noDatasetsSub": "Enregistrez votre premier dataset pour commencer le suivi"
+    },
+    "models": {
+      "title": "Entraînement Modèles",
+      "subtitle": "Entraîner et évaluer des modèles deep learning",
+      "trainNew": "Entraîner Nouveau Modèle",
+      "architecture": "Architecture",
+      "status": "Statut",
+      "accuracy": "Précision",
+      "epochs": "Époques",
+      "training": "Entraînement",
+      "completed": "Terminé",
+      "failed": "Échoué"
+    },
+    "experiments": {
+      "title": "Suivi des Expériences",
+      "subtitle": "Surveillez et gérez vos expériences ML",
+      "create": "Créer une Expérience",
+      "stats": { "total": "Total", "running": "En cours", "done": "Terminées", "failed": "Échouées" },
+      "status": { "pending": "En attente", "running": "En cours", "completed": "Terminée", "failed": "Échouée" },
+      "form": {
+        "name": "Nom de l'Expérience",
+        "namePlaceholder": "ex. Détection Pneumonie v2",
+        "description": "Description",
+        "descPlaceholder": "Décrivez l'objectif de cette expérience…",
+        "model": "Architecture du Modèle",
+        "dataset": "Dataset",
+        "noDataset": "Aucun",
+        "learningRate": "Taux d'Apprentissage",
+        "epochs": "Époques",
+        "batchSize": "Taille du Batch",
+        "optimizer": "Optimiseur",
+        "scheduler": "Scheduler LR",
+        "augmentation": "Augmentation des Données",
+        "earlyStopping": "Arrêt Anticipé",
+        "info": "L'expérience est sauvegardée en Attente. Cliquez Démarrer pour lancer l'entraînement, puis Résultats pour enregistrer les métriques.",
+        "cancel": "Annuler",
+        "submit": "Créer l'Expérience",
+        "submitting": "Création…"
+      },
+      "actions": {
+        "details": "Détails",
+        "start": "Démarrer",
+        "done": "Terminer",
+        "fail": "Échouer",
+        "results": "Résultats",
+        "delete": "Supprimer",
+        "startTraining": "Démarrer l'Entraînement",
+        "markDone": "Marquer Terminé",
+        "enterResults": "Saisir les Résultats",
+        "updateResults": "Mettre à Jour"
+      },
+      "results": {
+        "title": "Saisir les Résultats",
+        "info": "Entrez des pourcentages (0–100) pour accuracy/métriques, valeur brute pour la perte.",
+        "accuracy": "Précision (%)",
+        "loss": "Perte",
+        "auc": "AUC (%)",
+        "f1": "Score F1 (%)",
+        "precision": "Précision (%)",
+        "recall": "Rappel (%)",
+        "status": "Mettre à Jour le Statut",
+        "keepStatus": "Garder le statut actuel",
+        "cancel": "Annuler",
+        "save": "Sauvegarder les Résultats",
+        "saving": "Sauvegarde…"
+      },
+      "details": {
+        "status": "STATUT",
+        "model": "MODÈLE",
+        "dataset": "DATASET",
+        "started": "DÉMARRÉ",
+        "completed": "TERMINÉ",
+        "results": "RÉSULTATS",
+        "hyperparameters": "HYPERPARAMÈTRES",
+        "metrics": "MÉTRIQUES",
+        "close": "Fermer",
+        "delete": "Supprimer",
+        "deleting": "Suppression…"
+      },
+      "empty": "Aucune expérience {{status}}",
+      "noExperiments": "Créez votre première expérience"
+    },
+    "analyses": {
+      "title": "Explorateur d'Analyses",
+      "subtitle": "Toutes les analyses de la plateforme — anonymisées, sans données personnelles",
+      "badge": "Hub Recherche",
+      "stats": {
+        "total": "Total Analyses",
+        "pathologies": "Pathologies Trouvées",
+        "models": "Modèles IA Utilisés",
+        "avgProcessing": "Temps Moyen"
+      },
+      "filters": {
+        "title": "Filtres",
+        "model": "Modèle IA",
+        "allModels": "Tous les Modèles",
+        "pathology": "Pathologie",
+        "allPathologies": "Toutes les Pathologies",
+        "clearFilters": "Effacer les Filtres"
+      },
+      "distribution": "Distribution des Pathologies",
+      "modelPerformance": "Performance des Modèles",
+      "showing": "Affichage",
+      "of": "sur",
+      "noData": "Aucune analyse trouvée",
+      "noDataSub": "Essayez d'ajuster vos filtres",
+      "prev": "Préc.",
+      "next": "Suiv.",
+      "modal": {
+        "id": "Analyse #",
+        "model": "Modèle",
+        "status": "Statut",
+        "processing": "Temps de Traitement",
+        "hasPatient": "A un Patient",
+        "predictions": "Prédictions",
+        "noFindings": "Aucune anomalie détectée",
+        "confidence": "Scores de Confiance",
+        "close": "Fermer"
+      }
+    },
+    "comparison": {
+      "title": "Comparaison Modèles",
+      "subtitle": "Comparer performance entre différents modèles",
+      "selectModels": "Sélectionner Modèles à Comparer",
+      "metrics": "Métriques",
+      "visualize": "Visualiser"
+    },
+    "visualization": {
+      "title": "Visualisation Données",
+      "subtitle": "Visualiser datasets et prédictions modèles",
+      "confusionMatrix": "Matrice Confusion",
+      "rocCurve": "Courbe ROC",
+      "trainingHistory": "Historique Entraînement",
+      "featureImportance": "Importance Features"
+    },
+    "publications": {
+      "title": "Publications Recherche",
+      "subtitle": "Partager résultats et collaborer",
+      "publish": "Publier Recherche",
+      "draft": "Brouillon",
+      "published": "Publié",
+      "under_review": "En Révision",
+      "citations": "Citations",
+      "downloads": "Téléchargements"
+    }
+  }
+  ,
+"landing": {
+  "hero": {
+    "line1": "Transformez le",
+    "line2": "Diagnostic Médical",
+    "line3": "avec l'IA",
+    "watchDemo": "Voir la démo"
+  },
+  "stats": { "scans": "Analyses effectuées" },
+  "carousel": {
+    "analysisComplete": "Analyse terminée",
+    "highConfidence": "Détection haute confiance"
+  },
+  "howItWorks": {
+    "titleStart": "Comment fonctionne",
+    "titleEnd": "",
+    "subtitle": "Trois étapes simples pour transformer votre workflow diagnostique"
+  },
+  "steps": {
+    "upload": { "title": "Télécharger la radio", "desc": "Glissez-déposez vos radiographies ou connectez votre système PACS." },
+    "ai": { "title": "Analyse IA", "desc": "DenseNet-121 analyse l'image en moins de 3 secondes, détectant 14 pathologies." },
+    "results": { "title": "Obtenir les résultats", "desc": "Recevez des rapports avec scores de confiance, cartes thermiques et insights cliniques." }
+  },
+  "featuresSection": {
+    "titleStart": "Capacités IA",
+    "titleGradient": "Avancées",
+    "subtitle": "Propulsé par une technologie deep learning de pointe"
+  },
+  "features": {
+    "cloud": { "title": "Plateforme Cloud", "desc": "Accédez à vos outils depuis n'importe où, sur n'importe quel appareil" }
+  }
+}
+}

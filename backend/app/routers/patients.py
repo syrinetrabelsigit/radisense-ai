@@ -1,0 +1,1009 @@
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
+from sqlalchemy import func
+from typing import List, Optional
+from datetime import datetime
+
+from app.core.database import get_db
+from app.core.security import get_current_user
+from app.models.user import User
+from app.models.patient import Patient
+from app.models.analysis import Analysis
+from app.schemas.patient import (
+    PatientCreate,
+    PatientUpdate,
+    PatientResponse,
+    PatientList,
+    PatientDetail
+)
+from app.models.patient import PatientRadiologist
+import logging
+logger = logging.getLogger(__name__)
+
+router = APIRouter(prefix="/patients", tags=["patients"])
+
+# ========== PATIENT MANAGEMENT ==========
+
+@router.get("/", response_model=PatientList)
+async def get_patients(
+    skip: int = 0,
+    limit: int = 20,
+    search: Optional[str] = None,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Get patients based on user role:
+    - Admin: sees ALL patients
+    - Radiologist: sees ONLY assigned patients
+    """
+    
+    if current_user.role not in ["radiologist", "admin"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only radiologists and admins can access patients"
+        )
+    
+    # ✅ ADMIN VOIT TOUS LES PATIENTS
+    if current_user.role == "admin":
+        query = db.query(Patient).filter(Patient.is_active == True)
+    
+    # ✅ RADIOLOGUE VOIT UNIQUEMENT SES PATIENTS ASSIGNÉS
+    else:
+        patient_ids = db.query(PatientRadiologist.patient_id).filter(
+            PatientRadiologist.radiologist_id == current_user.id
+        ).all()
+        
+        patient_ids = [p[0] for p in patient_ids]
+        query = db.query(Patient).filter(
+            Patient.id.in_(patient_ids),
+            Patient.is_active == True  # ✅ Exclure les patients supprimés
+        )
+    
+    # Appliquer le filtre de recherche
+    if search:
+        search_filter = f"%{search}%"
+        query = query.filter(
+            (Patient.first_name.ilike(search_filter)) |
+            (Patient.last_name.ilike(search_filter)) |
+            (Patient.patient_id.ilike(search_filter)) |
+            (Patient.national_id.ilike(search_filter))  # ✅ RECHERCHE PAR NATIONAL_ID
+        )
+    
+    total = query.count()
+    patients = query.offset(skip).limit(limit).all()
+    
+    # Ajouter analysis_count pour chaque patient
+    # Ajouter analysis_count pour chaque patient
+    patients_with_counts = []
+    for patient in patients:
+        analysis_count = db.query(func.count(Analysis.id)).filter(
+            Analysis.patient_id == patient.id
+        ).scalar() or 0
+        
+        # ✅ AJOUTER: Récupérer le créateur
+        creator = db.query(User).filter(User.id == patient.created_by).first()
+        
+        # ✅ AJOUTER: Compter le nombre de radiologues assignés
+        radiologist_count = db.query(func.count(PatientRadiologist.id)).filter(
+            PatientRadiologist.patient_id == patient.id
+        ).scalar() or 0
+        
+        patient_dict = {
+            "id": patient.id,
+            "user_id": patient.user_id,
+            "patient_id": patient.patient_id,
+            "first_name": patient.first_name,
+            "last_name": patient.last_name,
+            "date_of_birth": patient.date_of_birth,
+            "gender": patient.gender,
+            "phone": patient.phone,
+            "email": patient.email,
+            "address": patient.address,
+            "medical_history": patient.medical_history,
+            "national_id": patient.national_id,
+            "created_by": patient.created_by,
+            "creator_name": f"Dr. {creator.first_name} {creator.last_name}" if creator else "Unknown",  # ✅ AJOUTÉ
+            "radiologist_count": radiologist_count,  # ✅ AJOUTÉ
+            "is_active": patient.is_active,
+            "created_at": patient.created_at,
+            "updated_at": patient.updated_at,
+            "deleted_at": patient.deleted_at,
+            "analysis_count": analysis_count
+        }
+        patients_with_counts.append(patient_dict)
+    
+    return {
+        "total": total,
+        "patients": patients_with_counts
+    }
+
+@router.post("/", response_model=PatientResponse)
+async def create_patient(
+    patient_data: PatientCreate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Create a new patient and auto-assign to current radiologist"""
+    
+    if current_user.role not in ["radiologist", "admin"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only radiologists and admins can create patients"
+        )
+    
+    # ✅ VÉRIFIER DOUBLON NATIONAL_ID
+    if patient_data.national_id:
+        existing = db.query(Patient).filter(
+            Patient.national_id == patient_data.national_id
+        ).first()
+        
+        if existing:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Patient with national ID {patient_data.national_id} already exists (ID: {existing.patient_id})"
+            )
+    
+    # Générer patient_id
+    patient_count = db.query(Patient).count()
+    auto_patient_id = f"PAT{str(patient_count + 1).zfill(3)}"
+    
+    # Créer le patient
+  # Créer le patient
+    new_patient = Patient(
+        patient_id=auto_patient_id,
+        user_id=None,
+        first_name=patient_data.first_name,
+        last_name=patient_data.last_name,
+        date_of_birth=patient_data.date_of_birth,
+        gender=patient_data.gender,
+        phone=patient_data.phone or None,
+        email=patient_data.email or None,
+        address=patient_data.address or None,
+        medical_history=patient_data.medical_history or None,
+        national_id=patient_data.national_id or None,
+        emergency_contact=patient_data.emergency_contact or None,
+        blood_type=patient_data.blood_type or None,
+        height=patient_data.height or None,
+        weight=patient_data.weight or None,
+        allergies=patient_data.allergies or None,
+        medications=patient_data.medications or None,
+        conditions=patient_data.conditions or None,
+        created_by=current_user.id
+    )
+    
+    db.add(new_patient)
+    db.commit()
+    db.refresh(new_patient)
+    
+    # ✅ AUTO-ASSIGNER AU RADIOLOGUE CRÉATEUR
+    assignment = PatientRadiologist(
+        patient_id=new_patient.id,
+        radiologist_id=current_user.id,
+        is_primary=True
+    )
+    
+    db.add(assignment)
+    db.commit()
+    
+    # Compter les analyses
+    analysis_count = 0
+    
+    # Retourner avec analysis_count
+    return {
+        "id": new_patient.id,
+        "user_id": new_patient.user_id,  # ✅ NOUVEAU
+        "patient_id": new_patient.patient_id,
+        "first_name": new_patient.first_name,
+        "last_name": new_patient.last_name,
+        "date_of_birth": new_patient.date_of_birth,
+        "gender": new_patient.gender,
+        "phone": new_patient.phone,
+        "email": new_patient.email,
+        "address": new_patient.address,
+        "medical_history": new_patient.medical_history,
+        "national_id": new_patient.national_id,  # ✅ NOUVEAU
+        "created_by": new_patient.created_by,
+        "is_active": new_patient.is_active,
+        "created_at": new_patient.created_at,
+        "updated_at": new_patient.updated_at,
+        "deleted_at": new_patient.deleted_at,
+        "analysis_count": analysis_count
+    }
+
+# ✅ NOUVEAU: VÉRIFIER SI NATIONAL_ID EXISTE
+@router.get("/check-national-id/{national_id}")
+async def check_national_id(
+    national_id: str,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Vérifier si un patient existe déjà avec cette carte d'identité"""
+    
+    patient = db.query(Patient).filter(Patient.national_id == national_id).first()
+    
+    if not patient:
+        return {"exists": False}
+    
+    # Vérifier si le radiologue actuel a déjà accès à ce patient
+    has_access = db.query(PatientRadiologist).filter(
+        PatientRadiologist.patient_id == patient.id,
+        PatientRadiologist.radiologist_id == current_user.id
+    ).first()
+    
+    return {
+        "exists": True,
+        "patient": {
+            "id": patient.id,
+            "patient_id": patient.patient_id,
+            "first_name": patient.first_name,
+            "last_name": patient.last_name,
+            "created_by": patient.created_by
+        },
+        "has_access": has_access is not None
+    }  
+
+# ✅ NOUVEAU: Get medical records for the logged-in patient
+@router.get("/my-records")
+async def get_my_records(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """PATIENT ONLY: Get complete medical record"""
+    
+    if current_user.role != "patient":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only patients can access this endpoint"
+        )
+    
+    # Trouver le profil patient
+    patient = db.query(Patient).filter(Patient.user_id == current_user.id).first()
+    
+    if not patient:
+        # ✅ Chercher par email et lier automatiquement
+        patient = db.query(Patient).filter(
+            Patient.email == current_user.email,
+            Patient.user_id == None
+        ).first()
+        if patient:
+            patient.user_id = current_user.id
+            db.commit()
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Patient profile not found. Please contact your radiologist."
+            )
+    
+    # Récupérer toutes les analyses
+    analyses = db.query(Analysis).filter(
+        Analysis.patient_id == patient.id,
+        Analysis.notes.isnot(None),  # ✅ Seulement après que le médecin a écrit ses notes
+        Analysis.notes != ''
+    ).order_by(Analysis.created_at.desc()).all()
+    
+    # Récupérer les radiologues assignés
+    radiologist_assignments = db.query(PatientRadiologist).filter(
+        PatientRadiologist.patient_id == patient.id
+    ).all()
+    
+    radiologists = []
+  # APRÈS — ajoute le filtre role == 'radiologist'
+    for assignment in radiologist_assignments:
+        radiologist = db.query(User).filter(
+            User.id == assignment.radiologist_id,
+            User.role == "radiologist"  # ✅ seulement les vrais radiologistes
+        ).first()
+        if radiologist:
+            radiologists.append({
+                "id": radiologist.id,
+                "user_id": radiologist.id,
+                "name": f"Dr. {radiologist.first_name} {radiologist.last_name}",
+                "first_name": radiologist.first_name,
+                "last_name": radiologist.last_name,
+                "email": radiologist.email,
+                "specialty": radiologist.specialty,
+                "is_primary": assignment.is_primary,
+                "avatar_url": radiologist.avatar_url or None,
+                "phone": radiologist.phone or None,
+                "cabinet_name": radiologist.cabinet_name or None,
+                "cabinet_address": radiologist.cabinet_address or None,
+                "cabinet_phone": radiologist.cabinet_phone or None,
+                "city": radiologist.city or None,
+                "country": radiologist.country or None,
+                "years_experience": radiologist.years_experience or None,
+                "bio": radiologist.bio or None,
+            })
+    
+    # Calculer l'âge
+    today = datetime.utcnow()
+    birth_date = patient.date_of_birth
+    age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+    
+    return {
+        "personal_info": {
+            "first_name": patient.first_name,
+            "last_name": patient.last_name,
+            "date_of_birth": patient.date_of_birth,
+            "age": age,
+            "gender": patient.gender,
+            "email": patient.email,
+            "phone": patient.phone,
+            "address": patient.address,
+            "national_id": patient.national_id,
+            "emergency_contact": patient.emergency_contact or "Not specified",
+        },
+        "medical_info": {
+            "medical_history": patient.medical_history or "Not specified",
+            "allergies": patient.allergies or "Not specified",
+            "medications": patient.medications or "Not specified",
+            "conditions": patient.conditions or "Not specified",
+            "blood_type": patient.blood_type or "N/A",
+            "height": patient.height or "N/A",
+            "weight": patient.weight or "N/A",
+        },
+        "analyses": [{
+            "id": a.id,
+            "created_at": a.created_at,
+            "status": a.status,
+            "predictions": a.predictions,
+            "confidence_scores": a.confidence_scores
+        } for a in analyses],
+        "radiologists": radiologists,
+        "stats": {
+            "total_analyses": len(analyses),
+            "total_radiologists": len(radiologists)
+        }
+    }
+
+# ✅ CRITICAL: /analyses MUST be BEFORE /{patient_id}
+@router.get("/analyses")
+async def get_my_analyses(
+    skip: int = 0,
+    limit: int = 100,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """PATIENT ONLY: Get all analyses for the logged-in patient"""
+    
+    if current_user.role != "patient":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only patients can access this endpoint"
+        )
+    
+    patient = db.query(Patient).filter(Patient.user_id == current_user.id).first()
+    
+    if not patient:
+        # ✅ Chercher par email et lier automatiquement
+        patient = db.query(Patient).filter(
+            Patient.email == current_user.email,
+            Patient.user_id == None
+        ).first()
+        if patient:
+            patient.user_id = current_user.id
+            db.commit()
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Patient profile not found. Please contact your radiologist."
+            )
+    
+    analyses_query = db.query(Analysis).filter(
+        Analysis.patient_id == patient.id,
+        Analysis.notes.isnot(None),  # ✅ Seulement les analyses avec notes du médecin
+        Analysis.notes != ''
+    ).order_by(Analysis.created_at.desc())
+    
+    total = analyses_query.count()
+    analyses = analyses_query.offset(skip).limit(limit).all()
+    
+    formatted_analyses = []
+    for analysis in analyses:
+        radiologist = db.query(User).filter(User.id == analysis.user_id).first()
+        
+        formatted_analyses.append({
+            "id": analysis.id,
+            "image_url": analysis.image_url,
+            "predictions": analysis.predictions,
+            "confidence_scores": analysis.confidence_scores,
+            "model_version": analysis.model_version,
+            "status": analysis.status,
+            "processing_time": analysis.processing_time,
+            "notes": analysis.notes,
+            "created_at": analysis.created_at,
+            "radiologist_name": f"Dr. {radiologist.first_name} {radiologist.last_name}" if radiologist else "Unknown"
+        })
+    
+    return {
+        "patient_id": patient.patient_id,
+        "patient_name": f"{patient.first_name} {patient.last_name}",
+        "analyses": formatted_analyses,
+        "total": total
+    }
+
+@router.get("/{patient_id}", response_model=PatientResponse)
+async def get_patient(
+    patient_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Get patient basic info"""
+    
+    patient = db.query(Patient).filter(
+        Patient.id == patient_id,
+        # Patient.created_by == current_user.id
+    ).first()
+    
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient not found"
+        )
+    
+    # Compter les analyses
+    analysis_count = db.query(func.count(Analysis.id)).filter(
+        Analysis.patient_id == patient.id
+    ).scalar() or 0
+    
+    # Retourner avec analysis_count
+    patient_dict = {
+        "id": patient.id,
+        "patient_id": patient.patient_id,
+        "first_name": patient.first_name,
+        "last_name": patient.last_name,
+        "date_of_birth": patient.date_of_birth,
+        "gender": patient.gender,
+        "phone": patient.phone,
+        "email": patient.email,
+        "address": patient.address,
+        "medical_history": patient.medical_history,
+        "created_by": patient.created_by,
+        "is_active": patient.is_active,
+        "created_at": patient.created_at,
+        "updated_at": patient.updated_at,
+        "deleted_at": patient.deleted_at,
+        "analysis_count": analysis_count
+    }
+    
+    return patient_dict
+
+
+@router.put("/{patient_id}", response_model=PatientResponse)
+async def update_patient(
+    patient_id: int,
+    patient_update: PatientUpdate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Update patient information"""
+    
+    patient = db.query(Patient).filter(
+        Patient.id == patient_id,
+        Patient.created_by == current_user.id
+    ).first()
+    
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient not found"
+        )
+    
+    # Update fields
+    update_data = patient_update.dict(exclude_unset=True)
+    for field, value in update_data.items():
+        setattr(patient, field, value)
+    
+    patient.updated_at = datetime.utcnow()
+    
+    db.commit()
+    db.refresh(patient)
+    
+    # Compter les analyses
+    analysis_count = db.query(func.count(Analysis.id)).filter(
+        Analysis.patient_id == patient.id
+    ).scalar() or 0
+    
+    # Retourner avec analysis_count
+    patient_dict = {
+        "id": patient.id,
+        "patient_id": patient.patient_id,
+        "first_name": patient.first_name,
+        "last_name": patient.last_name,
+        "date_of_birth": patient.date_of_birth,
+        "gender": patient.gender,
+        "phone": patient.phone,
+        "email": patient.email,
+        "address": patient.address,
+        "medical_history": patient.medical_history,
+        "created_by": patient.created_by,
+        "is_active": patient.is_active,
+        "created_at": patient.created_at,
+        "updated_at": patient.updated_at,
+        "deleted_at": patient.deleted_at,
+        "analysis_count": analysis_count
+    }
+    
+    return patient_dict
+
+
+@router.delete("/{patient_id}")
+async def delete_patient(
+    patient_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Delete patient (soft delete)"""
+    
+    # ✅ Admin peut supprimer n'importe quel patient
+    if current_user.role == "admin":
+        patient = db.query(Patient).filter(Patient.id == patient_id).first()
+    else:
+        patient = db.query(Patient).filter(
+            Patient.id == patient_id,
+            Patient.created_by == current_user.id
+        ).first()
+    
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient not found"
+        )
+    
+    patient.is_active = False
+    patient.deleted_at = datetime.utcnow()
+    
+    db.commit()
+    
+    return {"message": "Patient deleted successfully"}
+
+
+@router.get("/{patient_id}/analyses")
+async def get_patient_analyses(
+    patient_id: int,
+    skip: int = 0,
+    limit: int = 20,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Get all analyses for a specific patient"""
+    
+    # Verify patient belongs to user
+    patient = db.query(Patient).filter(
+        Patient.id == patient_id,
+        Patient.created_by == current_user.id
+    ).first()
+    
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient not found"
+        )
+    
+    analyses = db.query(Analysis).filter(
+        Analysis.patient_id == patient_id
+    ).order_by(Analysis.created_at.desc()).offset(skip).limit(limit).all()
+    
+    return {
+        "patient_id": patient_id,
+        "patient_name": f"{patient.first_name} {patient.last_name}",
+        "analyses": analyses,
+        "total": len(analyses)
+    }
+
+
+
+# ========== ADMIN ENDPOINTS ==========
+
+@router.get("/admin/all", response_model=PatientList)
+async def get_all_patients_admin(
+    skip: int = 0,
+    limit: int = 50,
+    search: Optional[str] = None,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    ADMIN ONLY: Get ALL patients from ALL radiologists
+    """
+    
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access only"
+        )
+    
+    # Admin voit TOUS les patients
+    query = db.query(Patient).filter(Patient.is_active == True)
+    
+    # Recherche
+    if search:
+        search_filter = f"%{search}%"
+        query = query.filter(
+            (Patient.first_name.ilike(search_filter)) |
+            (Patient.last_name.ilike(search_filter)) |
+            (Patient.patient_id.ilike(search_filter)) |
+            (Patient.national_id.ilike(search_filter))
+        )
+    
+    total = query.count()
+    patients = query.order_by(Patient.created_at.desc()).offset(skip).limit(limit).all()
+    
+    # Ajouter les infos supplémentaires
+    patients_with_details = []
+    for patient in patients:
+        # Compter les analyses
+        analysis_count = db.query(func.count(Analysis.id)).filter(
+            Analysis.patient_id == patient.id
+        ).scalar() or 0
+        
+        # Récupérer le créateur
+        creator = db.query(User).filter(User.id == patient.created_by).first()
+        
+        # Compter le nombre de radiologues assignés
+        radiologist_count = db.query(func.count(PatientRadiologist.id)).filter(
+            PatientRadiologist.patient_id == patient.id
+        ).scalar() or 0
+        
+        patient_dict = {
+            "id": patient.id,
+            "user_id": patient.user_id,
+            "patient_id": patient.patient_id,
+            "first_name": patient.first_name,
+            "last_name": patient.last_name,
+            "date_of_birth": patient.date_of_birth,
+            "gender": patient.gender,
+            "phone": patient.phone,
+            "email": patient.email,
+            "address": patient.address,
+            "medical_history": patient.medical_history,
+            "national_id": patient.national_id,
+            "created_by": patient.created_by,
+            "creator_name": f"Dr. {creator.first_name} {creator.last_name}" if creator else "Unknown",
+            "radiologist_count": radiologist_count,
+            "is_active": patient.is_active,
+            "created_at": patient.created_at,
+            "updated_at": patient.updated_at,
+            "deleted_at": patient.deleted_at,
+            "analysis_count": analysis_count,
+            # ✅ Champs médicaux manquants
+            "blood_type": patient.blood_type,
+            "height": patient.height,
+            "weight": patient.weight,
+            "allergies": patient.allergies,
+            "medications": patient.medications,
+            "conditions": patient.conditions,
+            "emergency_contact": patient.emergency_contact,
+        }
+        patients_with_details.append(patient_dict)
+    
+    return {
+        "total": total,
+        "patients": patients_with_details
+    }
+
+
+@router.post("/{patient_id}/create-account")
+async def create_patient_account(
+    patient_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    if current_user.role != "admin":
+        raise HTTPException(status_code=403, detail="Admin access only")
+
+    patient = db.query(Patient).filter(Patient.id == patient_id).first()
+    if not patient:
+        raise HTTPException(status_code=404, detail="Patient not found")
+    if patient.user_id:
+        raise HTTPException(status_code=400, detail="Patient already has an account")
+    if not patient.email:
+        raise HTTPException(status_code=400, detail="Patient has no email address. Please add one first.")
+
+    # Auto-generate username + password
+    import secrets, string
+    def gen_password(length=12):
+        chars = string.ascii_letters + string.digits + "!@#$"
+        return ''.join(secrets.choice(chars) for _ in range(length))
+
+    def gen_username(name: str) -> str:
+        base = name.lower().replace(' ', '.').replace('-', '')[:20]
+        username = base
+        counter = 1
+        while db.query(User).filter(User.username == username).first():
+            username = f"{base}{counter}"
+            counter += 1
+        return username
+
+    username = gen_username(f"{patient.first_name} {patient.last_name}")
+    password = gen_password()
+
+    from app.core.security import get_password_hash
+    new_user = User(
+        username=username,
+        email=patient.email,
+        hashed_password=get_password_hash(password),
+        first_name=patient.first_name,
+        last_name=patient.last_name,
+        role="patient",
+        is_active=True,
+        email_verified=True,
+        must_change_password=True,
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    patient.user_id = new_user.id
+    db.commit()
+
+    # Send credentials email
+    try:
+        from app.services.email_templates import patient_account_created_template
+        from app.services.email_service import send_email
+        html = patient_account_created_template(
+            name=f"{patient.first_name} {patient.last_name}",
+            username=username,
+            password=password,
+        )
+        await send_email(
+            to_email=patient.email,
+            to_name=f"{patient.first_name} {patient.last_name}",
+            subject="Your RadiSense AI Account is Ready",
+            html_content=html,
+        )
+    except Exception as e:
+        logger.error(f"Patient account email error: {e}")
+
+    return {
+        "message": f"Account created for {patient.first_name} {patient.last_name}",
+        "username": username,
+        "email": patient.email
+    }
+
+@router.post("/{patient_id}/assign-radiologist")
+async def assign_patient_to_radiologist(
+    patient_id: int,
+    radiologist_id: int,
+    notes: Optional[str] = None,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    ADMIN ONLY: Assign a patient to another radiologist
+    """
+    
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access only"
+        )
+    
+    # Vérifier que le patient existe
+    patient = db.query(Patient).filter(Patient.id == patient_id).first()
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient not found"
+        )
+    
+    # Vérifier que le radiologue existe
+    radiologist = db.query(User).filter(
+        User.id == radiologist_id,
+        User.role == "radiologist"
+    ).first()
+    
+    if not radiologist:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Radiologist not found"
+        )
+    
+    # Vérifier si déjà assigné
+    existing = db.query(PatientRadiologist).filter(
+        PatientRadiologist.patient_id == patient_id,
+        PatientRadiologist.radiologist_id == radiologist_id
+    ).first()
+    
+    if existing:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Patient already assigned to this radiologist"
+        )
+    
+    # Créer l'assignation
+    assignment = PatientRadiologist(
+        patient_id=patient_id,
+        radiologist_id=radiologist_id,
+        is_primary=False,
+        notes=notes
+    )
+    
+    db.add(assignment)
+    db.commit()
+    
+    return {
+        "message": f"Patient {patient.patient_id} assigned to Dr. {radiologist.first_name} {radiologist.last_name}",
+        "patient_id": patient.patient_id,
+        "radiologist_name": f"Dr. {radiologist.first_name} {radiologist.last_name}"
+    }
+
+
+@router.get("/{patient_id}/radiologists")
+async def get_patient_radiologists(
+    patient_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Get all radiologists assigned to a patient
+    """
+    
+    if current_user.role not in ["admin", "radiologist"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+    
+    # Vérifier que le patient existe
+    patient = db.query(Patient).filter(Patient.id == patient_id).first()
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Patient not found"
+        )
+    
+    # Récupérer toutes les assignations
+    assignments = db.query(PatientRadiologist).filter(
+        PatientRadiologist.patient_id == patient_id
+    ).all()
+    
+    radiologists = []
+    for assignment in assignments:
+        radiologist = db.query(User).filter(User.id == assignment.radiologist_id).first()
+        if radiologist:
+            radiologists.append({
+                "id": radiologist.id,
+                "user_id": radiologist.id,
+                "name": f"Dr. {radiologist.first_name} {radiologist.last_name}",
+                "email": radiologist.email,
+                "is_primary": assignment.is_primary,
+                "assigned_at": assignment.assigned_at,
+                "notes": assignment.notes
+            })
+    
+    return {
+        "patient_id": patient.patient_id,
+        "patient_name": f"{patient.first_name} {patient.last_name}",
+        "radiologists": radiologists,
+        "total": len(radiologists)
+    }
+
+
+@router.delete("/{patient_id}/unassign-radiologist/{radiologist_id}")
+async def unassign_radiologist(
+    patient_id: int,
+    radiologist_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Admin OR radiologist can unassign themselves
+    """
+    
+    # ✅ Admin peut tout faire, radiologue peut seulement se désassigner lui-même
+    if current_user.role != "admin" and current_user.id != radiologist_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You can only remove yourself from a patient"
+        )
+    
+    # Vérifier l'assignation
+    assignment = db.query(PatientRadiologist).filter(
+        PatientRadiologist.patient_id == patient_id,
+        PatientRadiologist.radiologist_id == radiologist_id
+    ).first()
+    
+    if not assignment:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Assignment not found"
+        )
+    
+    # Ne pas supprimer si c'est le radiologue principal
+    if assignment.is_primary:
+        # Chercher un autre radiologue pour prendre le rôle primaire
+        other = db.query(PatientRadiologist).filter(
+            PatientRadiologist.patient_id == patient_id,
+            PatientRadiologist.radiologist_id != radiologist_id
+        ).first()
+        if other:
+            other.is_primary = True
+        # Sinon le patient reste sans primaire — c'est ok
+    
+    db.delete(assignment)
+    db.commit()
+    
+    return {"message": "Radiologist unassigned successfully"}
+
+
+@router.get("/admin/stats")
+async def get_admin_stats(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    ADMIN ONLY: Get global statistics
+    """
+    
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access only"
+        )
+    
+    # Statistiques globales
+    total_patients = db.query(func.count(Patient.id)).filter(Patient.is_active == True).scalar()
+    total_with_accounts = db.query(func.count(Patient.id)).filter(
+        Patient.is_active == True,
+        Patient.user_id.isnot(None)
+    ).scalar()
+    total_without_accounts = total_patients - total_with_accounts
+    
+    total_radiologists = db.query(func.count(User.id)).filter(User.role == "radiologist").scalar()
+    total_analyses = db.query(func.count(Analysis.id)).scalar()
+    
+    return {
+        "total_patients": total_patients,
+        "patients_with_accounts": total_with_accounts,
+        "patients_without_accounts": total_without_accounts,
+        "total_radiologists": total_radiologists,
+        "total_analyses": total_analyses
+    }
+@router.post("/second-opinion-request")
+async def request_second_opinion(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """PATIENT ONLY: Request a second opinion from admin"""
+    if current_user.role != "patient":
+        raise HTTPException(status_code=403, detail="Only patients can request second opinions")
+
+    # Trouver le profil patient
+    patient = db.query(Patient).filter(Patient.user_id == current_user.id).first()
+    if not patient:
+        raise HTTPException(status_code=404, detail="Patient profile not found")
+
+    # Trouver l'admin
+    admin = db.query(User).filter(User.role == "admin").first()
+
+    # Envoyer email à l'admin
+    try:
+        from app.services.email_service import send_email
+        html = f"""
+        <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#0a0f1a;color:white;border-radius:12px;">
+            <h2 style="color:#0066CC;">🔍 Second Opinion Request</h2>
+            <p>A patient has requested a second opinion on their medical case.</p>
+            <div style="background:#1a2235;padding:16px;border-radius:8px;margin:16px 0;border-left:4px solid #0066CC;">
+                <p><strong>Patient:</strong> {patient.first_name} {patient.last_name}</p>
+                <p><strong>Patient ID:</strong> {patient.patient_id}</p>
+                <p><strong>Email:</strong> {patient.email or 'Not specified'}</p>
+                <p><strong>Phone:</strong> {patient.phone or 'Not specified'}</p>
+            </div>
+            <p>Please review their medical records and analyses in the admin panel.</p>
+            <a href="http://localhost:5173/login?redirect=/admin/patients" 
+               style="display:inline-block;padding:12px 24px;background:#0066CC;color:white;text-decoration:none;border-radius:8px;margin-top:16px;">
+               View Patient Records
+            </a>
+        </div>
+        """
+        await send_email(
+            to_email=admin.email if admin else "admin@radisense.ai",
+            to_name="Admin",
+            subject=f"Second Opinion Request — {patient.first_name} {patient.last_name}",
+            html_content=html,
+        )
+    except Exception as e:
+        logger.error(f"Second opinion email error: {e}")
+
+    return {"message": "Second opinion request submitted successfully"}

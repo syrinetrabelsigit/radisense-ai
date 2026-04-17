@@ -1,0 +1,1893 @@
+{
+  "accountSettings": {
+  "badge": "Account",
+  "title": "Account Settings",
+  "subtitle": "Manage your preferences and security",
+  "sub": {
+    "title": "Subscription",
+    "subtitle": "Your current plan and usage",
+    "badgeBasic": "Basic",
+    "badgePro": "Professional",
+    "badgeEnterprise": "Enterprise",
+    "badgeResearchPro": "Research Pro",
+    "badgeResearchEnterprise": "Research Enterprise",
+    "billedMonthly": "Billed monthly",
+    "billedYearly": "Billed yearly",
+    "upgrade": "Upgrade",
+    "monthlyAnalyses": "Monthly Analyses",
+    "used": "used",
+    "quotaReached": "Quota reached",
+    "remaining": "remaining",
+    "unlimited": "Unlimited analyses included",
+    "datasetAccess": "Dataset access",
+    "analysesMonth": "Analyses this month",
+    "analysesTotal": "Analyses performed",
+    "available": "Available",
+    "renewsOn": "Renews on"
+  },
+  "notif": {
+    "title": "Notifications",
+    "subtitle": "Choose how you receive alerts",
+    "email": "Email Notifications",
+    "emailDesc": "Receive updates via email",
+    "sms": "SMS Notifications",
+    "smsDesc": "Get text message alerts"
+  },
+  "security": {
+    "title": "Security",
+    "subtitle": "Protect your account",
+    "twoFactor": "Two-Factor Authentication",
+    "twoFactorDesc": "Add an extra layer of security",
+    "pw": {
+      "title": "Change Password",
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm New Password",
+      "submit": "Update Password",
+      "success": "Password changed successfully!",
+      "errorCurrent": "Current password is required",
+      "errorLength": "New password must be at least 6 characters",
+      "errorMatch": "Passwords do not match"
+    }
+  },
+  "danger": {
+    "title": "Danger Zone",
+    "subtitle": "Irreversible account actions",
+    "deleteTitle": "Delete Account",
+    "deleteDesc": "Once you delete your account, all your data will be permanently removed. This action cannot be undone.",
+    "deleteBtn": "Delete My Account"
+  }
+},
+"profile": {
+  "title": "My Profile",
+  "subtitle": "Manage your personal and professional information",
+  "badge": "Account",
+  "editProfile": "Edit Profile",
+  "saveChanges": "Save Changes",
+  "cancel": "Cancel",
+  "saving": "Saving...",
+  "saveSuccess": "Profile saved successfully.",
+  "photoSaved": "Photo saved successfully!",
+  "photoUploaded": "Photo uploaded! Click \"Save Photo\" to confirm.",
+  "uploading": "Uploading...",
+  "changePhoto": "Change Photo",
+  "uploadPhoto": "Upload Photo",
+  "savePhoto": "Save Photo",
+  "photoRequired": "A professional photo is required for radiologists.",
+  "photoHint": "JPG, PNG or WebP · Max 5MB",
+  "notProvided": "Not provided",
+  "sections": {
+    "personal": { "title": "Personal Information", "subtitle": "Your basic identity details" },
+    "medical": { "title": "Medical Professional Details", "subtitle": "License, specialty and experience" },
+    "cabinet": { "title": "Cabinet / Clinic", "subtitle": "Your practice location and contact" },
+    "research": { "title": "Research Details", "subtitle": "Institutional and research information" }
+  },
+  "fields": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "city": "City",
+    "country": "Country",
+    "bio": "Bio",
+    "specialty": "Specialty",
+    "license": "License Number",
+    "yearsExp": "Years of Experience",
+    "region": "Region / State",
+    "cabinetName": "Cabinet / Clinic Name",
+    "cabinetAddress": "Full Address",
+    "cabinetPhone": "Cabinet Phone",
+    "institution": "Institution",
+    "orcid": "ORCID iD",
+    "yearsExpResearch": "Years Experience"
+  }
+},
+  "chat": {
+    "title": "Messages",
+    "allCaughtUp": "All caught up",
+    "unread": "{{count}} unread",
+    "noMessages": "No messages yet",
+    "noContacts": "No contacts found",
+    "startConversation": "Start a conversation",
+    "messageRadiologist": "Message your radiologist",
+    "messagePatient": "Message a patient",
+    "yourRadiologists": "Your Radiologists",
+    "yourPatients": "Your Patients",
+    "users": "Users",
+    "to": "To:",
+    "change": "Change",
+    "writePlaceholder": "Write your message...",
+    "send": "Send Message",
+    "sending": "Sending…",
+    "replyPlaceholder": "Reply… (Enter to send)",
+    "sayHello": "No messages yet — say hello!"
+  },
+  "navbar": {
+    "doctor": "Doctor",
+    "radiologist": "RADIOLOGIST",
+    "patient": "PATIENT",
+    "researcher": "RESEARCHER",
+    "admin": "ADMIN"
+  },
+  "nav": {
+    "requests": "Requests",
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "partners": "Partners",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "logout": "Logout",
+    "medicalRecords": "Medical Records",
+    "modelManagement": "Model Management",
+    "systemSettings": "System Settings",
+    "myProfile": "My Profile",
+    "news": "News",
+    "pathologies": "Pathologies",
+    "about": "About",
+    "upload": "Upload",
+    "patients": "Patients",
+    "analytics": "Analytics",
+    "myAnalyses": "Analyses",
+    "appointments": "Appointments",
+    "radiologists": "Radiologists",
+    "education": "Education",
+    "datasets": "Datasets",
+    "experiments": "Experiments",
+    "models": "Models",
+    "visualization": "Visualization",
+    "publications": "Publications",
+    "users": "Users",
+    "monitoring": "Monitoring",
+    "database": "Database",
+    "logs": "Logs",
+    "reports": "Reports",
+    "accountSettings": "Settings",
+    "analyses": "Analyses"
+    
+  },
+  "hero": {
+    "badge": "🏆 #1 AI Medical Imaging Platform",
+    "title": "AI-Powered Chest X-Ray",
+    "titleGradient": "Analysis in Seconds",
+    "subtitle": "Detect 14 thoracic pathologies with 84% accuracy using state-of-the-art DenseNet-121 deep learning architecture. Trusted by 500+ radiologists worldwide.",
+    "cta": {
+      "primary": "Start Free Trial",
+      "secondary": "Sign In"
+    },
+    "stats": {
+      "analyses": "Analyses Performed",
+      "accuracy": "Average Accuracy",
+      "time": "Processing Time"
+    }
+  },
+  "features": {
+    "title": "Why Choose RadiSense AI?",
+    "subtitle": "Cutting-edge technology meets clinical excellence",
+    "deeplearning": {
+      "title": "Deep Learning",
+      "desc": "DenseNet-121 trained on 112,000+ chest X-rays with advanced data augmentation"
+    },
+    "instant": {
+      "title": "Instant Results",
+      "desc": "Get predictions in under 3 seconds with real-time Grad-CAM visualization"
+    },
+    "hipaa": {
+      "title": "HIPAA Compliant",
+      "desc": "Bank-grade encryption with secure MySQL database and JWT authentication"
+    },
+    "analytics": {
+      "title": "Advanced Analytics",
+      "desc": "Track performance with MLflow, visualize trends, export comprehensive reports"
+    },
+    "pathologies": {
+      "title": "14 Pathologies",
+      "desc": "Detect pneumonia, effusion, cardiomegaly, and 11 other thoracic conditions"
+    },
+    "comparison": {
+      "title": "Model Comparison",
+      "desc": "Compare DenseNet, ResNet, EfficientNet, VGG, and MobileNet predictions"
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Radiology Workflow?",
+    "subtitle": "Join 500+ radiologists using AI to enhance diagnostic accuracy",
+    "button": "Get Started Now"
+  },
+  "footer": {
+    "tagline": "AI-Powered Medical Imaging",
+    "description": "Revolutionizing chest X-ray analysis with deep learning.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "documentation": "Documentation",
+    "api": "API",
+    "company": "Company",
+    "about": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "security": "Security",
+    "copyright": "© 2026 RadiSense AI. All rights reserved."
+  },
+  "login": {
+    "error": "Invalid username or password. Please try again.",
+    "errorCredentials": "Invalid username or password. Please try again.",
+    "errorEmailNotVerified": "Please verify your email before logging in. Check your inbox.",
+    "errorInactive": "Your account has been suspended. Please contact support.",
+    "title": "Welcome Back",
+    "subtitle": "Sign in to access your RadiSense AI dashboard and continue analyzing chest X-rays with cutting-edge AI technology.",
+    "feature1": {
+      "title": "Instant Analysis",
+      "desc": "Get results in under 3 seconds"
+    },
+    "feature2": {
+      "title": "14 Pathologies",
+      "desc": "Comprehensive detection capabilities"
+    },
+    "feature3": {
+      "title": "Secure & Compliant",
+      "desc": "HIPAA compliant infrastructure"
+    },
+    "form": {
+      "title": "Sign In",
+      "subtitle": "Enter your credentials to continue",
+      "username": "Username",
+      "password": "Password",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Sign In",
+      "loading": "Signing in...",
+      "or": "or",
+      "create": "Create New Account"
+    }
+  },
+  "register": {
+    "professionalAccess": "Professional Access — RadiSense AI",
+    "requestTitle": "Request Professional Access",
+    "requestSubtitle": "RadiSense AI is a verified professional platform. All applications are manually reviewed by our team before activation.",
+    "back": "Back",
+    "optional": "optional",
+    "processing": "Processing...",
+    "plan": "Plan",
+    "planSelected": "Plan selected",
+    "cancelAnytime": "Cancel anytime",
+    "yearTotal": "year total",
+    "saveYear": "Save ${{amount}}/year vs monthly",
+    "reviewPay": "Review & Pay",
+    "submitApplication": "Submit Application",
+    "yr": "yr",
+    "mo": "mo",
+    "moBilledYearly": "mo · billed yearly",
+    "stripeAfterForm": "Stripe payment after form",
+    "freeNoCreditCard": "Free — no credit card required",
+    "stripeNote": "Stripe secured · Admin verification within 48h",
+    "freeNote": "No credit card · Admin review within 48h · Credentials by email",
+    "orderSummary": "Order Summary",
+    "orderReview": "Review your application before secure payment",
+    "applicationDetails": "Application Details",
+    "name": "Name",
+    "email": "Email",
+    "paymentWarning": "Payment is charged immediately but account access is granted only after admin verification of your credentials.",
+    "stripeSecured": "Secured by Stripe",
+    "testCard": "Test card:",
+    "redirectingStripe": "Redirecting to Stripe...",
+    "payBtn": "Pay",
+    "alreadyAccount": "Already have an account?",
+    "patientNote": {
+      "title": "Are you a patient?",
+      "desc": "Patient accounts are created by your radiologist or a clinic administrator. Please contact your healthcare provider to get access."
+    },
+    "profiles": {
+      "radiologist": {
+        "title": "Radiologist",
+        "subtitle": "Licensed medical imaging professional",
+        "f1": "AI-powered chest X-ray analysis",
+        "f2": "Manage and track your patients",
+        "f3": "Generate detailed diagnostic reports",
+        "f4": "Free · Pro ($79/mo) · Enterprise ($199/mo)",
+        "badge": "Medical license required · Admin verified",
+        "note": "Your license will be verified by our admin team before account activation."
+      },
+      "researcher": {
+        "title": "Researcher",
+        "subtitle": "Academic or industry medical researcher",
+        "f1": "Access anonymized X-ray datasets",
+        "f2": "Model benchmarking & comparison tools",
+        "f3": "Research analytics & export",
+        "f4": "Free · Pro ($49/mo) · Enterprise ($99/mo)",
+        "badge": "Institutional affiliation required · Admin verified",
+        "note": "Institutional email and ORCID iD strongly recommended for faster approval."
+      }
+    },
+    "step2": {
+      "radiologistBadge": "Radiologist Application",
+      "researcherBadge": "Researcher Application",
+      "radiologistTitle": "Professional Details",
+      "researcherTitle": "Research Profile",
+      "radiologistSubtitle": "Fill in your professional details accurately. Our team will verify your medical license before activation.",
+      "researcherSubtitle": "Provide your institutional affiliation and research context. Review within 48 hours.",
+      "paymentNote": "You will be redirected to secure payment after form submission.",
+      "freeNote": "Free plan — no payment needed. Admin review within 48h."
+    },
+    "process": {
+      "step1": "Submit your professional application",
+      "step2": "Admin verifies credentials (48h)",
+      "step3": "Receive login credentials by email",
+      "step4": "Change password on first login"
+    },
+    "validation": {
+      "required": "This field is required",
+      "professionalEmail": "Please use a professional/institutional email (not Gmail, Yahoo, etc.)",
+      "institutionalEmail": "Please use your institutional email address"
+    },
+    "radio": {
+      "securityNote": "All fields marked with are required. Use your real professional details — our admin team will verify before activation.",
+      "fullName": "Full Name",
+      "professionalEmail": "Professional Email",
+      "emailHint": "Hospital or institution email only. Gmail, Yahoo and personal addresses are not accepted.",
+      "phone": "Professional Phone",
+      "specialty": "Radiology Specialty",
+      "specialtyPlaceholder": "Select your specialty...",
+      "licenseNumber": "Medical License Number",
+      "licenseHint": "Your official medical license or board certification number. Will be verified.",
+      "experience": "Years of Experience",
+      "experiencePlaceholder": "Select...",
+      "hospital": "Hospital / Clinic",
+      "hospitalPlaceholder": "e.g. St. Mary's Medical Center",
+      "city": "City",
+      "cityPlaceholder": "City",
+      "country": "Country",
+      "countryPlaceholder": "Select country...",
+      "additionalInfo": "Additional Information",
+      "messagePlaceholder": "Certifications, subspecialties, research interests..."
+    },
+    "research": {
+      "securityNote": "Fields marked with are required. Institutional email required for faster approval.",
+      "institutionalEmail": "Institutional Email",
+      "emailHint": "University or research institute email only. Personal emails not accepted.",
+      "phone": "Phone",
+      "institution": "University / Research Institute",
+      "institutionPlaceholder": "e.g. Harvard Medical School",
+      "department": "Department / Lab",
+      "departmentPlaceholder": "e.g. Department of Radiology",
+      "position": "Position / Title",
+      "positionPlaceholder": "PhD Student, Postdoc, Associate Professor...",
+      "domain": "Research Domain",
+      "domainPlaceholder": "Select your domain...",
+      "country": "Country",
+      "orcid": "ORCID iD",
+      "orcidRec": "recommended",
+      "orcidHint": "Helps verify your researcher identity. Get one free at",
+      "publications": "Google Scholar / Publications URL",
+      "useCase": "How will you use RadiSense AI?",
+      "useCasePlaceholder": "Describe your research project, what data you need, and how RadiSense AI will support your work..."
+    },
+    "pro": {
+      "billedMonthly": "mo",
+      "billedYearly": "mo billed yearly",
+      "forever": "forever"
+    },
+    "placeholder": {
+      "firstname": "First Name",
+      "lastname": "Last Name"
+    },
+    "error": {
+      "match": "Passwords do not match",
+      "length": "Password must be at least 6 characters"
+    },
+    "success": {
+      "title": "Application Submitted",
+      "desc": "Your {{role}} profile has been received. Our team will review your credentials and send your login details within 48 hours.",
+      "medical": "medical",
+      "research": "research",
+      "emailSent": "Confirmation email sent to your address",
+      "verify": "Your {{type}} will be verified",
+      "license": "medical license",
+      "affiliation": "institutional affiliation",
+      "credentialsSent": "Login credentials sent upon approval",
+      "passwordChange": "Password change required on first login",
+      "backHome": "Back to Home"
+    },
+    "orYearly": "or ${{price}}/mo yearly",
+    "yearlySavings": "Yearly billing saves you 20% compared to monthly"
+  },
+  "payment": {
+    "verifying": "Verifying your payment…",
+    "verifyingDesc": "Please wait, we're confirming your subscription with Stripe.",
+    "successTitle": "Payment Successful!",
+    "successDesc": "Your {{plan}} subscription is now active. A confirmation email has been sent.",
+    "included": "Plan — What's included",
+    "emailSent": "Confirmation email sent",
+    "emailSentDesc": "Check your inbox for the receipt and welcome email from RadiSense AI",
+    "goToDashboard": "Go to Dashboard",
+    "viewPlans": "View Plans",
+    "errorTitle": "Verification Failed",
+    "errorDesc": "We couldn't verify your payment. If you were charged, contact us at support@radisense.ai",
+    "backToPricing": "Back to Pricing",
+    "tryAgain": "Try Again"
+  },
+  "partners": {
+  "hero": {
+    "badge": "Verified Partner Network",
+    "title": "Our Partner",
+    "titleGradient": "Radiologists",
+    "subtitle": "Meet the licensed medical imaging professionals who trust RadiSense AI to enhance their diagnostic workflow every day."
+  },
+  "stats": {
+    "partners": "Partner Radiologists",
+    "countries": "Countries Covered",
+    "analyses": "Analyses Performed",
+    "accuracy": "Average Accuracy"
+  },
+  "searchPlaceholder": "Search by name, hospital or country...",
+  "filterAll": "All Specialties",
+  "showing": "Showing",
+  "of": "of",
+  "radiologists": "radiologists",
+  "analyses": "Analyses",
+  "accuracy": "Accuracy",
+  "verified": "Verified & Active Partner",
+  "memberSince": "Member Since",
+  "noResults": "No radiologists found",
+  "noResultsSub": "Try adjusting your search or filters",
+  "resetFilters": "Reset Filters",
+  "why": {
+    "title": "Why Join",
+    "titleGradient": "RadiSense AI?",
+    "subtitle": "Join a global network of radiologists leveraging AI to improve diagnostic accuracy and patient outcomes",
+    "b1": {
+      "title": "AI-Powered Precision",
+      "desc": "DenseNet-121 trained on 112,000+ chest X-rays detects 14 pathologies with up to 97% confidence — enhancing your diagnostic workflow."
+    },
+    "b2": {
+      "title": "Analytics & Insights",
+      "desc": "Track your performance, monitor patient trends and export comprehensive reports from a professional dashboard."
+    },
+    "b3": {
+      "title": "Secure & Compliant",
+      "desc": "HIPAA-compliant infrastructure with bank-grade encryption. Your patient data is protected at every step."
+    }
+  },
+  "cta": {
+    "title": "Join Our Partner Network",
+    "subtitle": "Apply today and get verified access to the most advanced AI radiology platform",
+    "button": "Apply as a Partner Radiologist"
+  }
+},
+  "forgot": {
+  "title": "Reset Password",
+  "subtitle": "Enter your email and we'll send you a reset link",
+  "form": {
+    "email": "Email Address",
+    "submit": "Send Reset Link",
+    "loading": "Sending...",
+    "back": "Back to Sign In",
+    "success": "Reset link sent! Check your email."
+  }
+},
+"reset": {
+  "title": "Set New Password",
+  "subtitle": "Choose a strong password for your RadiSense AI account",
+  "newPassword": "New Password",
+  "confirmPassword": "Confirm Password",
+  "placeholder": "At least 8 characters",
+  "confirmPlaceholder": "Repeat your password",
+  "submit": "Set New Password",
+  "loading": "Updating password…",
+  "match": "Passwords match",
+  "noMatch": "Passwords do not match",
+  "back": "Back to Sign In",
+  "requirements": "Requirements",
+  "req1": "At least 8 characters",
+  "req2": "One uppercase letter",
+  "req3": "One number",
+  "strength": {
+    "weak": "Weak",
+    "fair": "Fair",
+    "good": "Good",
+    "strong": "Strong"
+  },
+  "success": {
+    "title": "Password Updated!",
+    "desc": "Your password has been successfully reset. You can now sign in with your new password.",
+    "login": "Sign In Now"
+  },
+  "error": {
+    "expired": "This reset link has expired. Please request a new one.",
+    "invalid": "This reset link is invalid. Please request a new one.",
+    "generic": "Something went wrong. Please try again.",
+    "minLength": "Password must be at least 8 characters.",
+    "noMatch": "Passwords do not match.",
+    "newLink": "Request a new reset link"
+  }
+},
+  "dashboard": {
+    "radiologist": {
+      "schedule": {
+        "title": "My Schedule",
+        "subtitle": "Manage your patient appointments",
+        "badge": "Radiologist Portal",
+        "stats": {
+          "total": "Total",
+          "pending": "Pending",
+          "confirmed": "Confirmed",
+          "today": "Today"
+        },
+        "tabs": {
+          "upcoming": "Upcoming",
+          "past": "Past"
+        },
+        "actions": {
+          "details": "Details",
+          "confirm": "Confirm",
+          "complete": "Complete",
+          "cancel": "Cancel",
+          "close": "Close",
+          "confirmAppt": "Confirm Appointment",
+          "markComplete": "Mark as Completed",
+          "cancelAppt": "Cancel Appointment"
+        },
+        "modal": {
+          "title": "Appointment Details",
+          "patient": "PATIENT",
+          "type": "TYPE",
+          "status": "STATUS",
+          "location": "LOCATION",
+          "time": "TIME",
+          "notes": "NOTES",
+          "notesPlaceholder": "Add notes..."
+        },
+        "empty": "No {{tab}} appointments",
+        "emptySubtitle": "Your schedule is clear for this period",
+        "loading": "Loading schedule…"
+      }
+    },
+    "badge": "Radiologist Portal",
+    "welcome": "Welcome back",
+    "subtitle": "Here's what's happening with your analyses today",
+    "newAnalysis": "New Analysis",
+    "stats": {
+      "totalAnalyses": "Total Analyses",
+      "accuracy": "Accuracy Rate",
+      "patients": "Total Patients",
+      "pending": "Pending Reviews",
+      "change": {
+        "month":    "from last month",
+        "week":     "new this week",
+        "awaiting": "Awaiting validation",
+        "total":    "Total predictions",
+        "completed":"Completed rate"
+      }
+    },
+    "quickActions": "Quick Actions",
+    "action": {
+      "upload": {
+        "title": "Upload X-Ray",
+        "desc": "Analyze a new chest X-ray image"
+      },
+      "patients": {
+        "title": "Manage Patients",
+        "desc": "View and edit patient records"
+      },
+      "analytics": {
+        "title": "View Analytics",
+        "desc": "Explore detailed statistics"
+      }
+    },
+    "recent": "Recent Analyses",
+    "viewAll": "View All",
+    "table": {
+      "patient": "Patient",
+      "date": "Date",
+      "pathology": "Pathology",
+      "confidence": "Confidence",
+      "status": "Status",
+      "actions": "Actions",
+      "view": "View"
+    },
+    "status": {
+      "completed": "Completed",
+      "pending": "Pending",
+      "failed": "Failed"
+    },
+    "charts": {
+      "title": "Analysis Trends",
+      "monthly": "Monthly Analyses",
+      "distribution": "Pathology Distribution",
+      "pathologies": "Pathologies"
+    },
+    "pathology": {
+      "normal": "Normal",
+      "pneumonia": "Pneumonia",
+      "effusion": "Effusion"
+    }
+  },
+  "upload": {
+    "title": "Upload & Analyze",
+    "subtitle": "Upload a chest X-ray image for AI-powered analysis",
+    "dragDrop": "Drag & drop your X-ray image here",
+    "or": "or",
+    "browse": "Browse Files",
+    "supported": "Supported formats: JPG, PNG, DICOM (Max 10MB)",
+    "selected": "Selected file",
+    "remove": "Remove",
+    "analyzing": "Analyzing...",
+    "analyze": "Analyze Image",
+    "selectPatient": "Select Patient",
+    "selectModel": "Select AI Model",
+    "notes": "Clinical Notes (Optional)",
+    "notesPlaceholder": "Add any relevant clinical observations...",
+    "patient": {
+      "placeholder": "Choose a patient or create new",
+      "new": "Create New Patient"
+    },
+    "model": {
+      "densenet": "DenseNet-121 (Recommended)",
+      "resnet": "ResNet-50",
+      "efficientnet": "EfficientNet-B0",
+      "vgg": "VGG-16",
+      "mobilenet": "MobileNet-V2"
+    },
+    "error": {
+      "fileType": "Invalid file type. Please upload JPG, PNG, or DICOM.",
+      "fileSize": "File too large. Maximum size is 10MB.",
+      "noFile": "Please select an image to analyze.",
+      "noPatient": "Please select a patient."
+    },
+    "success": "Analysis completed successfully!"
+  },
+  "results": {
+    "title": "Analysis Results",
+    "subtitle": "AI-powered chest X-ray analysis completed",
+    "patient": "Patient",
+    "date": "Analysis Date",
+    "model": "AI Model",
+    "confidence": "Overall Confidence",
+    "status": "Status",
+    "processing": "Processing Time",
+    "tab": {
+      "overview": "Overview",
+      "pathologies": "Pathologies",
+      "heatmap": "Heatmap",
+      "report": "Report",
+      "model": "Model Metrics"
+    },
+    "overview": {
+      "title": "Analysis Overview",
+      "findings": "Key Findings",
+      "recommendation": "Recommendation",
+      "notes": "Clinical Notes"
+    },
+    "pathologies": {
+      "title": "Detected Pathologies",
+      "detected": "pathologies detected",
+      "high": "High Risk",
+      "medium": "Medium Risk",
+      "low": "Low Risk"
+    },
+    "pathology": {
+      "atelectasis": "Atelectasis",
+      "cardiomegaly": "Cardiomegaly",
+      "effusion": "Effusion",
+      "infiltration": "Infiltration",
+      "mass": "Mass",
+      "nodule": "Nodule",
+      "pneumonia": "Pneumonia",
+      "pneumothorax": "Pneumothorax",
+      "consolidation": "Consolidation",
+      "edema": "Edema",
+      "emphysema": "Emphysema",
+      "fibrosis": "Fibrosis",
+      "pleural_thickening": "Pleural Thickening",
+      "cardiomegalie": "Cardiomegaly",
+      "epanchement": "Effusion",
+      "epaississementpleural": "Pleural Thickening",
+      "pleuralthickening": "Pleural Thickening",
+      "normal": "Normal",
+      "hernia": "Hernia"
+    },
+    "heatmap": {
+      "title": "Grad-CAM Visualization",
+      "description": "Heat map showing areas of interest for the AI model",
+      "original": "Original Image",
+      "overlay": "Heatmap Overlay",
+      "intensity": "Intensity"
+    },
+    "actions": {
+      "download": "Download Report",
+      "share": "Share",
+      "print": "Print",
+      "newAnalysis": "New Analysis",
+      "validate": "Validate Results"
+    },
+    "report": {
+      "generating": "Generating comprehensive report...",
+      "title": "Medical Report"
+    }
+  },
+  "patients": {
+    "title": "Patient Management",
+    "subtitle": "Manage patient records and medical history",
+    "addNew": "Add New Patient",
+    "search": "Search patients...",
+    "filterAll": "All Patients",
+    "filterActive": "Active",
+    "filterInactive": "Inactive",
+    "years": "years",
+    "table": {
+      "id": "Patient ID",
+      "name": "Name",
+      "age": "Age",
+      "gender": "Gender",
+      "analyses": "Analyses",
+      "lastVisit": "Last Visit",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "action": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "newAnalysis": "New Analysis"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "modal": {
+      "title": "Add New Patient",
+      "edit": "Edit Patient"
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "dateOfBirth": "Date of Birth",
+      "gender": "Gender",
+      "email": "Email",
+      "phone": "Phone Number",
+      "address": "Address",
+      "medicalHistory": "Medical History",
+      "cancel": "Cancel",
+      "save": "Save Patient"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    }
+  },
+  "analytics": {
+    "title": "Analytics Dashboard",
+    "subtitle": "Comprehensive insights and performance metrics",
+    "overview": {
+      "title": "Performance Overview"
+    },
+    "stats": {
+      "totalAnalyses": "Total Analyses",
+      "avgAccuracy": "Average Accuracy",
+      "totalPatients": "Total Patients",
+      "avgProcessing": "Avg Processing Time"
+    },
+    "charts": {
+      "monthly": "Monthly Analysis Trends",
+      "pathology": "Pathology Distribution",
+      "accuracy": "Accuracy by Model",
+      "timeline": "Analysis Timeline"
+    },
+    "pathology": {
+      "title": "Top Detected Pathologies",
+      "cases": "cases",
+      "accuracy": "accuracy"
+    },
+    "model": {
+      "title": "Model Performance Comparison",
+      "accuracy": "Accuracy",
+      "speed": "Avg Speed",
+      "analyses": "Total Analyses"
+    },
+    "export": {
+      "title": "Export Data",
+      "csv": "Export CSV",
+      "excel": "Export Excel",
+      "pdf": "Export PDF Report"
+    },
+    "period": {
+      "7days": "Last 7 Days",
+      "30days": "Last 30 Days",
+      "3months": "Last 3 Months",
+      "year": "This Year",
+      "all": "All Time"
+    }
+  },
+  "news": {
+    "title": "News & Research",
+    "subtitle": "Latest updates in pulmonary radiology and AI-powered diagnostics",
+    "featured": "Featured Article",
+    "readMore": "Read More",
+    "readTime": "min read",
+    "author": "By",
+    "date": "Published on",
+    "categories": "Categories",
+    "all": "All News",
+    "research": "Research",
+    "technology": "Technology",
+    "medical": "Medical Updates",
+    "casestudies": "Case Studies",
+    "search": "Search articles...",
+    "latestNews": "Latest News",
+    "popularArticles": "Popular Articles",
+    "relatedArticles": "Related Articles",
+    "share": "Share Article",
+    "subscribe": "Subscribe to Newsletter",
+    "subscribeDesc": "Get the latest updates delivered to your inbox",
+    "emailPlaceholder": "Enter your email",
+    "subscribeBtn": "Subscribe"
+  },
+  "article": {
+    "backToNews": "Back to News",
+    "tableOfContents": "Table of Contents",
+    "summary": "Summary",
+    "keyTakeaways": "Key Takeaways",
+    "conclusion": "Conclusion",
+    "references": "References"
+  },
+  "pathology": {
+    "encyclopedia": "Pathologies Encyclopedia",
+    "subtitle": "Comprehensive guide to thoracic pathologies and conditions",
+    "explore": "Explore",
+    "learnMore": "Learn More",
+    "overview": "Overview",
+    "symptoms": "Symptoms",
+    "causes": "Causes",
+    "diagnosis": "Diagnosis",
+    "treatment": "Treatment",
+    "prevention": "Prevention",
+    "statistics": "Statistics",
+    "prevalence": "Prevalence",
+    "mortality": "Mortality Rate",
+    "detection": "Detection Accuracy",
+    "relatedConditions": "Related Conditions",
+    "aiInsights": "AI Insights",
+    "medicalAdvice": "Always consult with a healthcare professional for medical advice",
+    "searchPlaceholder": "Search pathologies...",
+    "filterAll": "All",
+    "filterCommon": "Most Common",
+    "filterSerious": "Serious",
+    "sortBy": "Sort by",
+    "sortName": "Name",
+    "sortPrevalence": "Prevalence",
+    "atelectasis": {
+      "name": "Atelectasis",
+      "desc": "Partial or complete collapse of lung tissue"
+    },
+    "cardiomegaly": {
+      "name": "Cardiomegaly",
+      "desc": "Enlargement of the heart"
+    },
+    "effusion": {
+      "name": "Pleural Effusion",
+      "desc": "Fluid accumulation in pleural space"
+    },
+    "infiltration": {
+      "name": "Infiltration",
+      "desc": "Abnormal substance in lung tissue"
+    },
+    "mass": {
+      "name": "Mass",
+      "desc": "Abnormal growth or tumor in lungs"
+    },
+    "nodule": {
+      "name": "Nodule",
+      "desc": "Small round growth in lung tissue"
+    },
+    "pneumonia": {
+      "name": "Pneumonia",
+      "desc": "Infection causing lung inflammation"
+    },
+    "pneumothorax": {
+      "name": "Pneumothorax",
+      "desc": "Collapsed lung due to air leak"
+    },
+    "consolidation": {
+      "name": "Consolidation",
+      "desc": "Lung tissue filled with fluid"
+    },
+    "edema": {
+      "name": "Pulmonary Edema",
+      "desc": "Fluid in air sacs of lungs"
+    },
+    "emphysema": {
+      "name": "Emphysema",
+      "desc": "Damage to lung air sacs"
+    },
+    "fibrosis": {
+      "name": "Fibrosis",
+      "desc": "Scarring and thickening of lung tissue"
+    },
+    "pleural_thickening": {
+      "name": "Pleural Thickening",
+      "desc": "Thickening of pleural membrane"
+    },
+    "hernia": {
+      "name": "Hiatal Hernia",
+      "desc": "Stomach pushes through diaphragm"
+    },
+    "tuberculosis": {
+      "name": "Tuberculosis",
+      "desc": "Bacterial infection causing lung damage and systemic illness"
+    }
+  },
+  "about": {
+    "title": "About RadiSense AI",
+    "subtitle": "Revolutionizing medical imaging with artificial intelligence",
+    "hero": {
+      "tagline": "Pioneering the future of diagnostic radiology"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "To empower healthcare professionals with cutting-edge AI technology, enabling faster, more accurate diagnoses and ultimately saving lives through early detection of thoracic pathologies."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "A world where every chest X-ray analysis is enhanced by AI, reducing diagnostic errors, improving patient outcomes, and making quality healthcare accessible to all."
+    },
+    "values": {
+      "title": "Our Values"
+    },
+    "value": {
+      "innovation": "Innovation",
+      "innovation_desc": "Pushing boundaries with state-of-the-art deep learning",
+      "accuracy": "Accuracy",
+      "accuracy_desc": "84%+ accuracy across 14 thoracic pathologies",
+      "speed": "Speed",
+      "speed_desc": "Analysis in under 3 seconds for rapid diagnosis",
+      "accessibility": "Accessibility",
+      "accessibility_desc": "Making AI diagnostics available globally"
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "2023q1": "Project Inception",
+      "2023q1_desc": "Research phase began with dataset collection of 112,000+ chest X-rays",
+      "2023q3": "Model Development",
+      "2023q3_desc": "5 deep learning models trained and compared for optimal performance",
+      "2024q1": "Clinical Trials",
+      "2024q1_desc": "Validation with 500+ radiologists achieving 84% accuracy",
+      "2024q3": "Platform Launch",
+      "2024q3_desc": "Public beta release with real-time prediction capabilities",
+      "2025q2": "Global Expansion",
+      "2025q2_desc": "30,000+ analyses performed across 15 countries",
+      "2026q1": "Today",
+      "2026q1_desc": "Leading AI radiology platform trusted by healthcare professionals worldwide"
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "subtitle": "Experts in AI, medicine, and healthcare technology",
+      "role": {
+        "ceo": "CEO & Co-Founder",
+        "cto": "CTO & Co-Founder",
+        "chief_medical": "Chief Medical Officer",
+        "head_ai": "Head of AI Research",
+        "lead_eng": "Lead Engineer",
+        "head_product": "Head of Product"
+      }
+    },
+    "stats": {
+      "analyses": "Analyses Performed",
+      "accuracy": "Average Accuracy",
+      "radiologists": "Healthcare Professionals",
+      "countries": "Countries Worldwide",
+      "saved": "Lives Potentially Saved",
+      "detection": "Early Detection Rate"
+    },
+    "cta": {
+      "title": "Ready to Transform Your Practice?",
+      "subtitle": "Join thousands of healthcare professionals using AI-powered diagnostics",
+      "button": "Get Started Today"
+    }
+  },
+  "pricing": {
+    "title": "Pricing Plans",
+    "subtitle": "Choose the perfect plan for your practice",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 20%",
+    "mostPopular": "Most Popular",
+    "startTrial": "Start Free Trial",
+    "choosePlan": "Choose Plan",
+    "currentPlan": "Current Plan",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "billedMonthly": "Billed monthly",
+    "billedYearly": "Billed yearly",
+    "free": {
+      "name": "Basic",
+      "desc": "Perfect for individual practitioners getting started",
+      "price": "Free",
+      "feature1": "10 analyses per month",
+      "feature2": "Basic pathology detection",
+      "feature3": "Standard accuracy",
+      "feature4": "Email support",
+      "feature5": "Web access"
+    },
+    "pro": {
+      "name": "Professional",
+      "desc": "Ideal for practicing radiologists and clinics",
+      "price": "49",
+      "feature1": "500 analyses per month",
+      "feature2": "All 14 pathologies",
+      "feature3": "84%+ accuracy",
+      "feature4": "Grad-CAM heatmaps",
+      "feature5": "Priority support",
+      "feature6": "Advanced analytics",
+      "feature7": "Export reports (PDF)",
+      "feature8": "API access"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "desc": "For hospitals and large healthcare organizations",
+      "price": "Custom",
+      "feature1": "Unlimited analyses",
+      "feature2": "All features included",
+      "feature3": "Custom model training",
+      "feature4": "Dedicated support",
+      "feature5": "On-premise deployment",
+      "feature6": "HIPAA compliance",
+      "feature7": "SLA guarantee",
+      "feature8": "Custom integrations",
+      "feature9": "Team management",
+      "feature10": "Advanced security"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Can I switch plans at any time?",
+      "a1": "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.",
+      "q2": "Is there a free trial?",
+      "a2": "Yes! All paid plans come with a 14-day free trial. No credit card required.",
+      "q3": "What payment methods do you accept?",
+      "a3": "We accept all major credit cards, PayPal, and bank transfers for Enterprise plans.",
+      "q4": "Can I cancel anytime?",
+      "a4": "Yes, you can cancel your subscription at any time with no penalties or fees.",
+      "q5": "Do you offer academic discounts?",
+      "a5": "Yes! We offer 50% discount for educational institutions and research organizations.",
+      "q6": "Is my data secure?",
+      "a6": "Absolutely. We use bank-grade encryption and are fully HIPAA compliant."
+    },
+    "comparison": {
+      "title": "Compare Plans",
+      "feature": "Feature",
+      "analyses": "Monthly Analyses",
+      "pathologies": "Pathology Detection",
+      "accuracy": "AI Accuracy",
+      "heatmaps": "Grad-CAM Heatmaps",
+      "support": "Support",
+      "analytics": "Analytics Dashboard",
+      "api": "API Access",
+      "export": "Export Reports",
+      "training": "Custom Training",
+      "onpremise": "On-Premise"
+    }
+  },
+  "patient": {
+    "dashboard": {
+      "title": "My Health Dashboard",
+      "subtitle": "Track your medical analyses and health records",
+      "welcome": "Welcome back"
+    },
+    "stats": {
+      "totalAnalyses": "Total Analyses",
+      "pendingResults": "Pending Results",
+      "appointments": "Upcoming Appointments",
+      "reports": "Medical Reports"
+    },
+    "actions": {
+      "title": "Quick Actions",
+      "bookAppointment": "Book Appointment",
+      "viewRecords": "View Medical Records",
+      "uploadImage": "Request Analysis",
+      "contact": "Contact Radiologist"
+    },
+    "recentAnalyses": {
+      "title": "Recent Analyses",
+      "viewAll": "View All Analyses",
+      "noResults": "No analyses yet",
+      "requestFirst": "Request your first analysis"
+    },
+    "records": {
+      "title": "My Medical Records",
+      "subtitle": "Access your complete medical history",
+      "personalInfo": "Personal Information",
+      "medicalHistory": "Medical History",
+      "allergies": "Allergies",
+      "medications": "Current Medications",
+      "conditions": "Medical Conditions",
+      "bloodType": "Blood Type",
+      "emergencyContact": "Emergency Contact",
+      "edit": "Edit Information"
+    },
+    "appointments": {
+      "title": "My Appointments",
+      "subtitle": "Schedule and manage your appointments",
+      "book": "Book New Appointment",
+      "upcoming": "Upcoming Appointments",
+      "past": "Past Appointments",
+      "noUpcoming": "No upcoming appointments",
+      "date": "Date",
+      "time": "Time",
+      "doctor": "Doctor",
+      "type": "Type",
+      "status": "Status",
+      "cancel": "Cancel",
+      "reschedule": "Reschedule",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "cancelConfirmedTitle": "Cancel Confirmed Appointment",
+      "cancelConfirmedWarning": "This appointment was already confirmed by the doctor. Please provide a reason so they can be notified.",
+      "cancelReasonLabel": "Reason for cancellation",
+      "cancelReasonPlaceholder": "e.g. Personal emergency, schedule conflict, health issue...",
+      "keepAppointment": "Keep Appointment",
+      "confirmCancellation": "Confirm Cancellation"
+    },
+    "myAnalyses": {
+      "title": "My Analyses History",
+      "subtitle": "View all your chest X-ray analyses",
+      "filterAll": "All",
+      "filterCompleted": "Completed",
+      "filterPending": "Pending",
+      "sortDate": "Sort by Date",
+      "sortStatus": "Sort by Status"
+    },
+    "education": {
+      "title": "Health Education",
+      "subtitle": "Learn about thoracic pathologies and lung health",
+      "recommended": "Recommended for You",
+      "categories": "Categories",
+      "prevention": "Prevention",
+      "symptoms": "Symptoms",
+      "treatment": "Treatment",
+      "lifestyle": "Lifestyle"
+    },
+    "radiologists": {
+      "title": "My Healthcare Team",
+      "subtitle": "Connect with your radiologists and specialists",
+      "primary": "Primary Radiologist",
+      "specialists": "Specialists",
+      "message": "Send Message",
+      "viewProfile": "View Profile",
+      "requestSecondOpinion": "Request Second Opinion"
+    }
+  },
+  "admin": {
+    "requests": {
+      "subtitle": "Review and manage all registration requests with payment info",
+      "refresh": "Refresh",
+      "total": "Total",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "all": "All",
+      "noRequests": "No {{filter}} requests",
+      "review": "Review",
+      "quickReject": "Quick Reject",
+      "view": "View",
+      "approveCreate": "Approve & Create Account",
+      "reject": "Reject",
+      "rejectTitle": "Reject Request",
+      "rejectingFrom": "Rejecting request from",
+      "paidWarning": "This user paid — their subscription will be cancelled.",
+      "rejectReason": "Reason for rejection",
+      "confirmReject": "Confirm Rejection",
+      "professionalDetails": "Professional Details",
+      "rejectionReason": "Rejection reason",
+      "approvedSuccess": "Approved! Account created: {{username}}",
+      "rejectedSuccess": "Request rejected. User notified by email.",
+      "reasonRequired": "Please provide a reason"
+    },
+    "patients": {
+      "withAccounts": "With Account",
+      "assignRadiologist": "Assign Radiologist",
+      "assignTitle": "Assign to Radiologist",
+      "assignedRadiologists": "Assigned Radiologists",
+      "chooseRadiologist": "Choose a radiologist..."
+    },
+    "appointments": {
+      "title": "Appointments",
+      "subtitle": "Monitor and manage all appointments across the platform",
+      "badge": "Admin Panel",
+      "stats": {
+        "total": "Total",
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "today": "Today"
+      },
+      "filter": {
+        "all": "All",
+        "label": "Filter:"
+      },
+      "table": {
+        "dateTime": "Date & Time",
+        "patient": "Patient",
+        "radiologist": "Radiologist",
+        "type": "Type",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      },
+      "modal": {
+        "title": "Appointment #",
+        "patient": "PATIENT",
+        "radiologist": "RADIOLOGIST",
+        "type": "TYPE",
+        "location": "LOCATION",
+        "notes": "NOTES",
+        "changeStatus": "CHANGE STATUS",
+        "close": "Close",
+        "delete": "Delete",
+        "cancellationReason": "Cancellation Reason"
+      },
+      "empty": "No appointments found",
+      "loading": "Loading appointments…"
+    },
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "subtitle": "System overview and management",
+      "welcome": "Welcome back, Administrator"
+    },
+    "stats": {
+      "totalUsers": "Total Users",
+      "activeAnalyses": "Active Analyses",
+      "systemHealth": "System Health",
+      "revenue": "Monthly Revenue",
+      "newUsers": "New Users (30d)",
+      "totalAnalyses": "Total Analyses",
+      "avgAccuracy": "Avg Accuracy",
+      "uptime": "System Uptime"
+    },
+    "actions": {
+      "title": "Quick Actions",
+      "manageUsers": "Manage Users",
+      "viewLogs": "View Audit Logs",
+      "systemSettings": "System Settings",
+      "modelManagement": "Model Management"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "viewAll": "View All Logs"
+    },
+    "system": {
+      "title": "System Status",
+      "api": "API Server",
+      "database": "Database",
+      "storage": "Storage",
+      "ml": "ML Services",
+      "operational": "Operational",
+      "warning": "Warning",
+      "error": "Error"
+    },
+    "users": {
+      "title": "User Management",
+      "subtitle": "Manage all platform users and permissions",
+      "addNew": "Add New User",
+      "search": "Search users...",
+      "filterAll": "All Users",
+      "filterAdmins": "Admins",
+      "filterRadiologists": "Radiologists",
+      "filterPatients": "Patients",
+      "filterResearchers": "Researchers",
+      "table": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "joined": "Joined",
+        "analyses": "Analyses",
+        "actions": "Actions"
+      },
+      "action": {
+        "edit": "Edit",
+        "delete": "Delete",
+        "suspend": "Suspend",
+        "activate": "Activate",
+        "viewProfile": "View Profile"
+      },
+      "status": {
+        "active": "Active",
+        "suspended": "Suspended",
+        "inactive": "Inactive"
+      },
+      "role": {
+        "admin": "Admin",
+        "radiologist": "Radiologist",
+        "patient": "Patient",
+        "researcher": "Researcher"
+      },
+      "modal": {
+        "title": "Add New User",
+        "edit": "Edit User",
+        "editing": "Editing",
+        "subtitle": "Create a new platform account",
+        "rolePermission": "This account will have",
+        "permissions": "permissions"
+      },
+      "form": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "role": "Role",
+        "password": "Password",
+        "status": "Status",
+        "cancel": "Cancel",
+        "save": "Save User",
+        "saveChanges": "Save Changes",
+        "createUser": "Create User"
+      }
+    },
+    "monitoring": {
+      "title": "System Monitoring",
+      "subtitle": "Real-time system health and performance metrics",
+      "performance": "Performance Metrics",
+      "cpu": "CPU Usage",
+      "memory": "Memory Usage",
+      "disk": "Disk Usage",
+      "network": "Network Traffic",
+      "services": "Services Status",
+      "apiServer": "API Server",
+      "database": "MySQL Database",
+      "mlflow": "MLflow Server",
+      "redis": "Redis Cache",
+      "nginx": "Nginx",
+      "liveStats": "Live Statistics",
+      "activeUsers": "Active Users",
+      "requestsPerMin": "Requests/min",
+      "avgResponseTime": "Avg Response Time",
+      "errorRate": "Error Rate",
+      "recentLogs": "Recent System Logs",
+      "viewAllLogs": "View All Logs",
+      "level": {
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error"
+      },
+      "restart": "Restart Service",
+      "clearCache": "Clear Cache",
+      "exportLogs": "Export Logs"
+    },
+    "models": {
+      "title": "Model Management",
+      "subtitle": "Manage AI models and training pipelines",
+      "deployNew": "Deploy New Model",
+      "active": "Active Models",
+      "archived": "Archived Models",
+      "modelName": "Model Name",
+      "version": "Version",
+      "accuracy": "Accuracy",
+      "status": "Status",
+      "deployed": "Deployed",
+      "lastUpdated": "Last Updated",
+      "predictions": "Predictions",
+      "status_values": {
+        "production": "Production",
+        "staging": "Staging",
+        "training": "Training",
+        "archived": "Archived"
+      },
+      "action": {
+        "viewMetrics": "View Metrics",
+        "retrain": "Retrain",
+        "archive": "Archive",
+        "activate": "Activate",
+        "download": "Download"
+      },
+      "details": "Model Details",
+      "architecture": "Architecture",
+      "framework": "Framework",
+      "inputSize": "Input Size",
+      "parameters": "Parameters",
+      "trainingTime": "Training Time",
+      "dataset": "Dataset",
+      "performance": "Performance Metrics",
+      "precision": "Precision",
+      "recall": "Recall",
+      "f1Score": "F1 Score",
+      "auc": "AUC-ROC",
+      "training": {
+        "title": "Training History",
+        "epoch": "Epoch",
+        "loss": "Loss",
+        "valLoss": "Val Loss",
+        "viewLogs": "View Training Logs"
+      }
+    },
+    "logs": {
+      "title": "Audit Logs",
+      "subtitle": "Track all system activities and user actions",
+      "export": "Export Logs",
+      "clearFilters": "Clear Filters",
+      "filterByLevel": "Filter by Level",
+      "filterByService": "Filter by Service",
+      "filterByUser": "Filter by User",
+      "search": "Search logs...",
+      "dateRange": "Date Range",
+      "level": {
+        "all": "All Levels",
+        "info": "Info",
+        "warning": "Warning",
+        "error": "Error",
+        "critical": "Critical",
+        "success": "Success"
+      },
+      "service": {
+        "all": "All Services",
+        "api": "API",
+        "database": "Database",
+        "ml": "ML Services",
+        "auth": "Authentication",
+        "system": "System"
+      },
+      "table": {
+        "timestamp": "Timestamp",
+        "level": "Level",
+        "service": "Service",
+        "user": "User",
+        "action": "Action",
+        "details": "Details"
+      },
+      "action": {
+        "viewDetails": "View Details",
+        "download": "Download",
+        "analysisPrediction": "Analysis Prediction"
+
+      },
+      "stats": {
+        "totalLogs": "Total Logs",
+        "errors": "Errors",
+        "warnings": "Warnings",
+        "todayActivity": "Today's Activity"
+      }
+    },
+    "database": {
+      "title": "Database Management",
+      "subtitle": "Manage database operations and performance",
+      "overview": "Database Overview",
+      "totalRecords": "Total Records",
+      "storageUsed": "Storage Used",
+      "backups": "Backups",
+      "lastBackup": "Last Backup",
+      "tables": "Database Tables",
+      "table": {
+        "name": "Table Name",
+        "records": "Records",
+        "size": "Size",
+        "lastModified": "Last Modified",
+        "actions": "Actions"
+      },
+      "action": {
+        "backup": "Backup Database",
+        "restore": "Restore",
+        "optimize": "Optimize",
+        "export": "Export",
+        "vacuum": "Vacuum",
+        "analyze": "Analyze"
+      },
+      "backup": {
+        "title": "Backup History",
+        "status": "Status",
+        "size": "Size",
+        "duration": "Duration",
+        "download": "Download"
+      },
+      "status": {
+        "completed": "Completed",
+        "running": "Running",
+        "failed": "Failed"
+      },
+      "operations": {
+        "title": "Recent Operations",
+        "type": "Type",
+        "status": "Status",
+        "time": "Time"
+      },
+      "performance": {
+        "title": "Performance Metrics",
+        "queries": "Queries/sec",
+        "connections": "Active Connections",
+        "cacheHit": "Cache Hit Rate",
+        "avgQuery": "Avg Query Time"
+      }
+    },
+    "settings": {
+      "title": "System Settings",
+      "subtitle": "Configure system parameters and preferences",
+      "save": "Save Changes",
+      "reset": "Reset to Default",
+      "general": {
+        "title": "General Settings",
+        "siteName": "Site Name",
+        "siteUrl": "Site URL",
+        "adminEmail": "Admin Email",
+        "timezone": "Timezone",
+        "language": "Default Language",
+        "maintenanceMode": "Maintenance Mode"
+      },
+      "security": {
+        "title": "Security Settings",
+        "jwtExpiry": "JWT Token Expiry",
+        "maxLoginAttempts": "Max Login Attempts",
+        "sessionTimeout": "Session Timeout",
+        "twoFactor": "Two-Factor Authentication",
+        "ipWhitelist": "IP Whitelist",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "ml": {
+        "title": "ML Model Settings",
+        "defaultModel": "Default Model",
+        "confidenceThreshold": "Confidence Threshold",
+        "maxBatchSize": "Max Batch Size",
+        "autoRetrain": "Auto-Retrain",
+        "gpuAcceleration": "GPU Acceleration"
+      },
+      "email": {
+        "title": "Email Configuration",
+        "smtpHost": "SMTP Host",
+        "smtpPort": "SMTP Port",
+        "smtpUser": "SMTP Username",
+        "smtpPassword": "SMTP Password",
+        "fromAddress": "From Address",
+        "fromName": "From Name",
+        "testEmail": "Send Test Email"
+      },
+      "storage": {
+        "title": "Storage Settings",
+        "provider": "Storage Provider",
+        "maxFileSize": "Max File Size",
+        "allowedFormats": "Allowed Formats",
+        "compressionEnabled": "Image Compression",
+        "retentionPeriod": "Data Retention Period"
+      },
+      "backup": {
+        "title": "Backup Settings",
+        "autoBackup": "Automatic Backup",
+        "frequency": "Backup Frequency",
+        "retention": "Backup Retention",
+        "location": "Backup Location"
+      },
+      "notifications": {
+        "title": "Notification Settings",
+        "emailNotifications": "Email Notifications",
+        "slackWebhook": "Slack Webhook URL",
+        "criticalAlerts": "Critical Alerts",
+        "weeklyReports": "Weekly Reports"
+      }
+    },
+    "reports": {
+      "title": "Reports Generator",
+      "subtitle": "Generate comprehensive system and analytics reports",
+      "generate": "Generate Report",
+      "download": "Download Report",
+      "schedule": "Schedule Report",
+      "types": {
+        "title": "Report Types"
+      },
+      "type": {
+        "usage": "Usage Analytics",
+        "performance": "Performance Metrics",
+        "financial": "Financial Report",
+        "user": "User Activity",
+        "ml": "ML Model Performance",
+        "security": "Security Audit"
+      },
+      "filters": {
+        "title": "Report Configuration",
+        "dateRange": "Date Range",
+        "format": "Export Format",
+        "frequency": "Frequency",
+        "recipients": "Email Recipients"
+      },
+      "range": {
+        "today": "Today",
+        "week": "Last 7 Days",
+        "month": "Last 30 Days",
+        "quarter": "Last Quarter",
+        "year": "Last Year",
+        "custom": "Custom Range"
+      },
+      "format": {
+        "pdf": "PDF",
+        "excel": "Excel (XLSX)",
+        "csv": "CSV",
+        "json": "JSON"
+      },
+      "freq": {
+        "once": "One-time",
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly"
+      },
+      "recent": {
+        "title": "Recent Reports",
+        "name": "Report Name",
+        "type": "Type",
+        "generated": "Generated",
+        "size": "Size",
+        "status": "Status"
+      },
+      "status": {
+        "completed": "Completed",
+        "processing": "Processing",
+        "scheduled": "Scheduled",
+        "failed": "Failed"
+      },
+      "scheduled": {
+        "title": "Scheduled Reports",
+        "edit": "Edit",
+        "delete": "Delete",
+        "pause": "Pause",
+        "active": "Active",
+        "paused": "Paused"
+      }
+    }
+  },
+  "researcher": {
+    "dashboard": {
+      "title": "Research Dashboard",
+      "subtitle": "Access datasets, train models, and track experiments",
+      "welcome": "Welcome back, Researcher"
+    },
+    "stats": {
+      "datasets": "Available Datasets",
+      "experiments": "Active Experiments",
+      "models": "Trained Models",
+      "publications": "Publications"
+    },
+    "actions": {
+      "title": "Quick Actions",
+      "newExperiment": "New Experiment",
+      "uploadDataset": "Upload Dataset",
+      "viewModels": "View Models",
+      "mlflow": "Open MLflow"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "viewAll": "View All"
+    },
+    "datasets": {
+      "title": "My Datasets",
+      "subtitle": "Register and manage your medical imaging datasets",
+      "register": "Register Dataset",
+      "totalImages": "Total Images",
+      "training": "Training",
+      "valTest": "Val / Test",
+      "modal": {
+        "register": "Register Dataset",
+        "subtitle": "Add metadata about a medical imaging dataset",
+        "name": "Dataset Name",
+        "description": "Description",
+        "type": "Type",
+        "size": "Number of Images",
+        "source": "Source / Institution",
+        "format": "Image Format",
+        "resolution": "Resolution",
+        "license": "License",
+        "diseases": "Disease / Class Labels",
+        "diseasePlaceholder": "Type a class and press Enter or Add…",
+        "add": "Add",
+        "cancel": "Cancel",
+        "submit": "Register Dataset",
+        "submitting": "Registering…"
+      },
+      "details": "View Details",
+      "delete": "Delete",
+      "deleteConfirm": "Delete this dataset permanently?",
+      "noDatasets": "No datasets registered yet",
+      "noDatasetsSub": "Register your first dataset to start tracking your research data"
+    },
+    "models": {
+      "title": "Model Training",
+      "subtitle": "Train and evaluate deep learning models",
+      "trainNew": "Train New Model",
+      "architecture": "Architecture",
+      "status": "Status",
+      "accuracy": "Accuracy",
+      "epochs": "Epochs",
+      "training": "Training",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "experiments": {
+      "title": "Experiment Tracking",
+      "subtitle": "Monitor and manage ML experiments",
+      "create": "Create Experiment",
+      "stats": { "total": "Total", "running": "Running", "done": "Done", "failed": "Failed" },
+      "status": { "pending": "Pending", "running": "Running", "completed": "Completed", "failed": "Failed" },
+      "form": {
+        "name": "Experiment Name",
+        "namePlaceholder": "e.g., Pneumonia Detection v2",
+        "description": "Description",
+        "descPlaceholder": "Describe the objective…",
+        "model": "Model Architecture",
+        "dataset": "Dataset",
+        "noDataset": "None",
+        "learningRate": "Learning Rate",
+        "epochs": "Epochs",
+        "batchSize": "Batch Size",
+        "optimizer": "Optimizer",
+        "scheduler": "LR Scheduler",
+        "augmentation": "Data Augmentation",
+        "earlyStopping": "Early Stopping",
+        "info": "Experiment is saved as Pending. Click Start to begin training, then Enter Results to log metrics.",
+        "cancel": "Cancel",
+        "submit": "Create Experiment",
+        "submitting": "Creating…"
+      },
+      "actions": {
+        "details": "Details",
+        "start": "Start",
+        "done": "Done",
+        "fail": "Fail",
+        "results": "Results",
+        "delete": "Delete",
+        "startTraining": "Start Training",
+        "markDone": "Mark Done",
+        "enterResults": "Enter Results",
+        "updateResults": "Update Results"
+      },
+      "results": {
+        "title": "Enter Results",
+        "info": "Enter percentages (0–100) for accuracy/metrics, raw value for loss.",
+        "accuracy": "Accuracy (%)",
+        "loss": "Loss",
+        "auc": "AUC (%)",
+        "f1": "F1 Score (%)",
+        "precision": "Precision (%)",
+        "recall": "Recall (%)",
+        "status": "Update Status",
+        "keepStatus": "Keep current status",
+        "cancel": "Cancel",
+        "save": "Save Results",
+        "saving": "Saving…"
+      },
+      "details": {
+        "status": "STATUS",
+        "model": "MODEL",
+        "dataset": "DATASET",
+        "started": "STARTED",
+        "completed": "COMPLETED",
+        "results": "RESULTS",
+        "hyperparameters": "HYPERPARAMETERS",
+        "metrics": "METRICS",
+        "close": "Close",
+        "delete": "Delete",
+        "deleting": "Deleting…"
+      },
+      "empty": "No {{status}} experiments",
+      "noExperiments": "Create your first experiment"
+    },
+    "analyses": {
+      "title": "Analyses Browser",
+      "subtitle": "All platform X-ray analyses — anonymized, no patient personal data",
+      "badge": "Research Hub",
+      "stats": {
+        "total": "Total Analyses",
+        "pathologies": "Pathologies Found",
+        "models": "AI Models Used",
+        "avgProcessing": "Avg Processing"
+      },
+      "filters": {
+        "title": "Filters",
+        "model": "AI Model",
+        "allModels": "All Models",
+        "pathology": "Pathology",
+        "allPathologies": "All Pathologies",
+        "clearFilters": "Clear Filters"
+      },
+      "distribution": "Pathology Distribution",
+      "modelPerformance": "Model Performance",
+      "showing": "Showing",
+      "of": "of",
+      "noData": "No analyses found",
+      "noDataSub": "Try adjusting your filters",
+      "prev": "Prev",
+      "next": "Next",
+      "modal": {
+        "id": "Analysis #",
+        "model": "Model",
+        "status": "Status",
+        "processing": "Processing Time",
+        "hasPatient": "Has Patient",
+        "predictions": "Predictions",
+        "noFindings": "No findings detected",
+        "confidence": "Confidence Scores",
+        "close": "Close"
+      }
+    },
+    "comparison": {
+      "title": "Model Comparison",
+      "subtitle": "Compare performance across different models",
+      "selectModels": "Select Models to Compare",
+      "metrics": "Metrics",
+      "visualize": "Visualize"
+    },
+    "visualization": {
+      "title": "Data Visualization",
+      "subtitle": "Visualize datasets and model predictions",
+      "confusionMatrix": "Confusion Matrix",
+      "rocCurve": "ROC Curve",
+      "trainingHistory": "Training History",
+      "featureImportance": "Feature Importance"
+    },
+    "publications": {
+      "title": "Research Publications",
+      "subtitle": "Share findings and collaborate",
+      "publish": "Publish Research",
+      "draft": "Draft",
+      "published": "Published",
+      "under_review": "Under Review",
+      "citations": "Citations",
+      "downloads": "Downloads"
+    }
+  }
+  ,
+"landing": {
+  "hero": {
+    "line1": "Transform Medical",
+    "line2": "Diagnostics",
+    "line3": "with AI",
+    "watchDemo": "Watch Demo"
+  },
+  "stats": { "scans": "Scans Analyzed" },
+  "carousel": {
+    "analysisComplete": "Analysis Complete",
+    "highConfidence": "High Confidence Detection"
+  },
+  "howItWorks": {
+    "titleStart": "How",
+    "titleEnd": "Works",
+    "subtitle": "Three simple steps to transform your diagnostic workflow"
+  },
+  "steps": {
+    "upload": { "title": "Upload X-Ray", "desc": "Drag and drop your chest X-ray or connect to your PACS system." },
+    "ai": { "title": "AI Analysis", "desc": "DenseNet-121 analyzes the image in under 3 seconds, detecting 14 pathologies." },
+    "results": { "title": "Get Results", "desc": "Receive diagnostic reports with confidence scores, heatmaps, and clinical insights." }
+  },
+  "featuresSection": {
+    "titleStart": "Advanced AI",
+    "titleGradient": "Capabilities",
+    "subtitle": "Powered by state-of-the-art deep learning technology"
+  },
+  "features": {
+    "cloud": { "title": "Cloud Platform", "desc": "Access your diagnostic tools from anywhere, on any device" }
+  }
+}
+}

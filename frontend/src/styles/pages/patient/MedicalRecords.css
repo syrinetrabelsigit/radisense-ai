@@ -1,0 +1,190 @@
+/* ========== MEDICAL RECORDS PREMIUM ========== */
+.mr-page {
+  min-height: calc(100vh - 80px);
+  padding: 3rem 0 5rem;
+}
+
+/* ── HEADER ── */
+.mr-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 3rem; gap: 2rem;
+}
+.mr-badge {
+  display: inline-flex; align-items: center; gap: 0.625rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0,102,204,0.1); border: 1px solid rgba(0,102,204,0.2);
+  border-radius: 100px; color: #60A5FA;
+  font-size: 0.8125rem; font-weight: 600; margin-bottom: 1rem;
+}
+[data-theme="light"] .mr-badge { color: #0066CC; }
+.mr-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #00BFA6;
+  animation: mrPulse 2s ease infinite;
+}
+@keyframes mrPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,191,166,0.7); }
+  50%      { box-shadow: 0 0 0 7px rgba(0,191,166,0); }
+}
+.mr-title {
+  font-size: 2.75rem; font-weight: 900; letter-spacing: -0.04em;
+  color: var(--text-primary); margin-bottom: 0.5rem;
+}
+.mr-title-grad {
+  background: linear-gradient(135deg, #0066CC, #00BFA6);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.mr-subtitle { font-size: 1.0625rem; color: var(--text-secondary); }
+
+.mr-header-actions { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
+
+.mr-cancel-btn {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 1.5rem; border-radius: 14px;
+  background: transparent; border: 1px solid var(--border-primary);
+  color: var(--text-secondary); font-weight: 600; font-size: 0.9375rem;
+  cursor: pointer; transition: all 0.25s ease;
+}
+.mr-cancel-btn:hover { border-color: rgba(239,68,68,0.3); color: #EF4444; }
+
+.mr-edit-btn {
+  display: flex; align-items: center; gap: 0.625rem;
+  padding: 0.875rem 1.75rem; border-radius: 14px;
+  background: var(--bg-card); border: 1.5px solid var(--border-primary);
+  color: var(--text-primary); font-weight: 700; font-size: 0.9375rem;
+  cursor: pointer; transition: all 0.25s ease;
+}
+.mr-edit-btn:hover { border-color: #0066CC; color: #0066CC; transform: translateY(-2px); }
+.mr-edit-btn.save {
+  background: linear-gradient(135deg, #0066CC, #00BFA6);
+  border-color: transparent; color: white;
+  box-shadow: 0 8px 24px rgba(0,102,204,0.3);
+}
+.mr-edit-btn.save:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,102,204,0.45); color: white; }
+
+/* ── VITALS STRIP ── */
+.mr-vitals {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem; margin-bottom: 2.5rem;
+}
+.mr-vital-card {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: 20px; transition: all 0.3s ease;
+}
+.mr-vital-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+.mr-vital-icon {
+  width: 50px; height: 50px; border-radius: 14px; flex-shrink: 0;
+  background: color-mix(in srgb, var(--vc) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--vc) 22%, transparent);
+  color: var(--vc);
+  display: flex; align-items: center; justify-content: center;
+}
+.mr-vital-body { display: flex; flex-direction: column; gap: 0.2rem; }
+.mr-vital-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.mr-vital-value { font-size: 1.625rem; font-weight: 900; line-height: 1; }
+.mr-vital-unit { font-size: 0.875rem; font-weight: 500; margin-left: 0.25rem; color: var(--text-muted); }
+.mr-vital-glow {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 70px; height: 70px; border-radius: 50%;
+  opacity: 0.07; filter: blur(16px);
+}
+
+/* ── MAIN GRID ── */
+.mr-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+.mr-full { grid-column: 1 / -1; }
+
+/* ── CARDS ── */
+.mr-card {
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: 24px; padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+.mr-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
+
+.mr-card-header {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  margin-bottom: 2rem; padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+.mr-card-icon {
+  width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+  background: color-mix(in srgb, var(--ci) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ci) 20%, transparent);
+  color: var(--ci);
+  display: flex; align-items: center; justify-content: center;
+}
+.mr-card-title { font-size: 1.125rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem; }
+.mr-card-sub { font-size: 0.875rem; color: var(--text-muted); }
+
+/* ── FIELDS ── */
+.mr-fields-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.mr-field { display: flex; flex-direction: column; gap: 0.5rem; }
+.mr-field.full { grid-column: 1 / -1; }
+
+.mr-label {
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em;
+}
+.mr-value {
+  font-size: 1rem; font-weight: 600; color: var(--text-primary);
+  padding: 0.875rem 1.125rem;
+  background: var(--bg-secondary); border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  line-height: 1.5;
+}
+.mr-input {
+  width: 100%; padding: 0.875rem 1.125rem;
+  background: var(--bg-secondary); border: 1.5px solid var(--border-primary);
+  border-radius: 12px; color: var(--text-primary);
+  font-size: 0.9375rem; outline: none; font-family: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.mr-input:focus { border-color: #0066CC; box-shadow: 0 0 0 3px rgba(0,102,204,0.12); }
+.mr-textarea { resize: vertical; min-height: 80px; }
+
+/* ── MEDICAL HISTORY GRID ── */
+.mr-medical-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.mr-medical-field { display: flex; flex-direction: column; gap: 0.75rem; }
+.mr-medical-label {
+  display: flex; align-items: center; gap: 0.625rem;
+  font-size: 0.875rem; font-weight: 700; color: var(--text-primary);
+}
+.mr-medical-icon {
+  width: 30px; height: 30px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.mr-medical-value {
+  font-size: 0.9375rem; color: var(--text-secondary);
+  padding: 1rem 1.125rem;
+  background: var(--bg-secondary); border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  line-height: 1.6; min-height: 56px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .mr-vitals { grid-template-columns: repeat(2, 1fr); }
+  .mr-grid { grid-template-columns: 1fr; }
+  .mr-full { grid-column: auto; }
+}
+@media (max-width: 768px) {
+  .mr-header { flex-direction: column; align-items: flex-start; }
+  .mr-vitals { grid-template-columns: repeat(2, 1fr); }
+  .mr-fields-grid { grid-template-columns: 1fr; }
+  .mr-medical-grid { grid-template-columns: 1fr; }
+  .mr-title { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .mr-vitals { grid-template-columns: 1fr 1fr; }
+}
