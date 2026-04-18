@@ -1,5 +1,4 @@
 # 🏥 RadiSense AI
-
 **"Where Radiology Meets Intelligence"**
 
 Plateforme web de diagnostic médical assisté par IA pour la détection automatique de 14 pathologies pulmonaires.
@@ -8,7 +7,7 @@ Plateforme web de diagnostic médical assisté par IA pour la détection automat
 
 ## 📋 Informations du Projet
 
-- **Étudiant :** Syrine Trabelsi
+- **Étudiante :** Syrine Trabelsi
 - **Professeur :** Haythem Ghazouani
 - **Module :** Deep Learning / Computer Vision
 - **Durée :** 8 semaines
@@ -37,7 +36,7 @@ Plateforme web de diagnostic médical assisté par IA pour la détection automat
 
 ---
 
-## 🤖 5 Modèles à Comparer
+## 🤖 5 Modèles Comparés
 
 | Modèle | Paramètres | AUC-ROC Attendu |
 |--------|-----------|----------------|
@@ -52,86 +51,136 @@ Plateforme web de diagnostic médical assisté par IA pour la détection automat
 ## 🛠️ Stack Technique
 
 **Backend & ML:**
-- Python 3.11
-- PyTorch 2.1
-- FastAPI
-- MLflow
-- MySQL
+- Python 3.11 + PyTorch 2.1
+- FastAPI + SQLAlchemy
+- MLflow (experiment tracking)
+- MySQL 8.0
 
 **Frontend:**
-- React 18
-- JavaScript
+- React 18 + JavaScript
 - Tailwind CSS
 
 **DevOps:**
-- Docker
-- Docker Compose
+- Docker + Docker Compose
+- pytest (71% coverage)
 
 ---
 
 ## 📁 Structure du Projet
-```
 radisense-ai/
-├── src/                    # Code source Python
-│   ├── data/              # Preprocessing
-│   ├── models/            # 5 architectures DL
-│   ├── training/          # Training loops
-│   ├── api/               # FastAPI
-│   └── utils/             # Utilitaires
+├── backend/                # API FastAPI
+│   ├── app/
+│   │   ├── core/          # Config, DB, Security
+│   │   ├── models/        # SQLAlchemy models
+│   │   ├── routers/       # API endpoints
+│   │   ├── schemas/       # Pydantic schemas
+│   │   └── services/      # Business logic
+│   ├── tests/             # Tests pytest (71% coverage)
+│   ├── requirements.txt
+│   └── Dockerfile
+├── frontend/              # React App
+│   ├── src/
+│   └── Dockerfile
 ├── notebooks/             # Jupyter notebooks
-├── tests/                 # Tests unitaires
-├── docker/                # Docker configs
-├── frontend/              # React app
-└── data/                  # Dataset (gitignore)
+│   ├── 01_EDA.ipynb
+│   ├── 02_Training.ipynb
+│   └── 03_Evaluation.ipynb
+├── docker-compose.yml
+└── README.md
+---
+
+## 🚀 Lancer le Projet avec Docker
+
+### Prérequis
+- Docker Desktop installé et lancé
+- Git
+
+### Installation
+
+```bash
+# 1. Cloner le repo
+git clone https://github.com/syrinetrabelsigit/radisense-ai.git
+cd radisense-ai
+
+# 2. Lancer tous les services
+docker-compose up --build
+```
+
+### Services disponibles
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| Frontend | http://localhost:3000 | Interface React |
+| Backend API | http://localhost:8000 | FastAPI + Swagger |
+| API Docs | http://localhost:8000/docs | Documentation Swagger |
+| MLflow | http://localhost:5000 | Experiment tracking |
+| MySQL | localhost:3307 | Base de données |
+
+### Arrêter les services
+
+```bash
+docker-compose down
 ```
 
 ---
 
-## 🚀 Installation
+## 🧪 Tests
 
-### Prérequis
-- Python 3.11+
-- Node.js 18+
-- Docker
-
-### Setup
 ```bash
-# Cloner le repo
-git clone https://github.com/syrinetrabelsigit/radisense-ai.git
-cd radisense-ai
-
-# Créer venv
-python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-
-# Installer dépendances
+cd backend
 pip install -r requirements.txt
+pytest
+```
 
-# Télécharger dataset
-# Voir instructions dans src/data/download_sample.py
+**Résultats :** 171 tests passent — coverage **71.37%** ✅
+
+---
+
+## 🔧 Installation Manuelle (sans Docker)
+
+### Backend
+
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Linux/Mac
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Variables d'environnement
+
+Créer `backend/.env` :
+```env
+DATABASE_URL=mysql+pymysql://root:radisense_password@localhost:3307/radisense
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
 
 ---
 
 ## 📈 Progression
 
-- [x] Setup projet
-- [x] Structure complète
-- [x] Requirements.txt
-- [x] Notebook EDA
-- [ ] Téléchargement dataset
-- [ ] Preprocessing pipeline
-- [ ] Entraînement modèles
-- [ ] API FastAPI
-- [ ] Frontend React
-- [ ] Docker Compose
-
----
-
-## 📚 Documentation
-
-- [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) - Vue d'ensemble complète
+- [x] Setup projet & structure
+- [x] Dataset EDA (Notebook 01)
+- [x] Preprocessing pipeline
+- [x] Entraînement modèles (Notebook 02)
+- [x] Évaluation & comparaison (Notebook 03)
+- [x] Backend FastAPI complet
+- [x] Frontend React complet
+- [x] Docker Compose (4 services)
+- [x] Tests pytest (71% coverage)
+- [x] MLflow tracking
 
 ---
 
@@ -143,5 +192,5 @@ pip install -r requirements.txt
 
 ---
 
-**Date de début :** 6 février 2026  
-**Dernière mise à jour :** 14 février 2026
+**Date de début :** 16 Janvier 2026
+**Dernière mise à jour :** 18 avril 2026
