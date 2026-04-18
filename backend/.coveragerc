@@ -1,0 +1,14 @@
+[run]
+omit =
+    app/utils/gradcam.py
+    app/utils/model_loader.py
+    app/utils/pdf_generator.py
+    app/services/email_templates.py
+    app/services/predict.py
+    app/services/ml_service.py
+    app/schemas/analytics.py
+    app/routers/access_requests.py
+    app/routers/payments.py
+    app/routers/researcher.py
+    app/services/file_service.py
+    app/utils/preprocessing.py
